@@ -2,20 +2,27 @@
 ##What I did was to make a dendrogram and choose a height on the y-axis of the dendrogram that looked reasonable for separating my variables (proteins), 
 ##and selecting that height yielded 23 clusters.
 
-
-source("biostats.R")
+source("Github/OysterSeedProject/analysis/kmeans/biostats.R")
 
 #Combine silo 3 and silo 9 data
-setwd("Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo9/")
-system("cat ../silo3/silo3.csv >> ../Silo3_and_9/silo3_9.csv")
-system("cat silo9.csv >> ../Silo3_and_9/silo3_9.csv")
-#restart R
+setwd("Github/OysterSeedProject/analysis/kmeans/")
+system("cat /silo3/silo3.csv >> ../Silo3_and_9/silo3_9.csv")
+system("cat /silo9/silo9.csv >> ../Silo3_and_9/silo3_9.csv")
+
+setwd("Silo3_and_9/")
 
 #Load in NSAF data
-setwd("Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/")
-silo3_9 <- read.csv("silo3and9.csv", row.names=1)
-silo3_9.detected <- read.csv("silo3and9.csv")
-colnames(silo3_9.detected)[1] <- "X"
+silo3.9 <- read.csv(file = "silo3_9.csv")
+
+#remove contaminant proteins
+proteins3_9<-subset(silo3.9, grepl(paste('CHOYP', collapse="|"), silo3.9$S3.Protein))
+
+#set rownames
+rownames(proteins3_9)<-proteins3_9$S3.Protein
+prot3_9<-proteins3_9[,2:9]
+
+#ensure contaminants are gone
+which(grepl('ALBU_BOVIN', silo3_9$Protein))
 
 #use bray-curtis dissimilarity for clustering
 library(vegan)
