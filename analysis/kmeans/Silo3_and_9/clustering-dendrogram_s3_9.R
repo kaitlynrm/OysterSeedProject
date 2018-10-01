@@ -3,11 +3,15 @@
 ##and selecting that height yielded 23 clusters.
 
 source("Github/OysterSeedProject/analysis/kmeans/biostats.R")
+setwd("Github/OysterSeedProject/analysis/kmeans/")
+
+#deliminate silos in protein name and combine silos
+system("awk '$1 = "3_"$1' silo3/silo3.csv >> Silo3_9/silo3_9.csv)
+system("awk '$1 = "9_"$1' silo9/silo9.csv >> Silo3_9/silo3_9.csv)
 
 #Combine silo 3 and silo 9 data
-setwd("Github/OysterSeedProject/analysis/kmeans/")
-system("cat /silo3/silo3.csv >> ../Silo3_and_9/silo3_9.csv")
-system("cat /silo9/silo9.csv >> ../Silo3_and_9/silo3_9.csv")
+#system("cat /silo3/silo3.csv >> ../Silo3_and_9/silo3_9.csv")
+#system("cat /silo9/silo9.csv >> ../Silo3_and_9/silo3_9.csv")
 
 setwd("Silo3_and_9/")
 
@@ -74,7 +78,7 @@ silo3_9.clus <- cbind(names, silo3_9.clus)
 rownames(silo3_9.clus) <- NULL
 colnames(silo3_9.clus)[1] <- "S3_9.Protein"
 colnames(silo3_9.clus)[2] <- "Cluster"
-silo3_9.all <- merge(silo3_9.clus, silo3_9.detected, by.x = "Protein", by.y = "X")
+#silo3_9.all <- merge(silo3_9.clus, silo3_9.detected, by.x = "Protein", by.y = "X")
 
 
 #this gives matrix of 2 columns, first with proteins second with cluster assignment
@@ -94,6 +98,7 @@ ggplot(melted_all_s3_9, aes(x=variable, y=value, group=Protein)) +geom_line(alph
 dev.off()
 
 #Merge Silo clusters with Silo annotated and tagged datasheet
+#library(silo3_9_annotated)
 silo3_9.annotated <- read.csv("silo3_9_annotated.csv")
 silo3_9.final <- merge(silo3_9.clus, silo3_9.annotated, by.x = "Protein", by.y = "Protein")
 
