@@ -1,23 +1,17 @@
 ###Kmeans clusering for multiple silos###
 
-
 #deliminate silo in protein name and combine silos
 system("awk '$1=\"3_\"$1' /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo3/silo3.csv >> /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9.csv")
 system("awk '$1=\"9_\"$1' /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo9/silo9.csv >> /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9.csv")
-
-#Combine silo 3 and silo 9 data
-#system("cat /silo3/silo3.csv >> ../Silo3_and_9/silo3_9.csv")which(grepl('9_S9-Protein', silo3.9$Protein))
-#system("cat /silo9/silo9.csv >> ../Silo3_and_9/silo3_9.csv")
 
 setwd("Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/")
 
 #Load in NSAF data
 silo3.9 <- read.csv(file = "silo3_9.csv")
+colnames(silo3.9)[colnames(silo3.9)=="X3_S3.Protein"] <- "Protein"
 
 #remove silo header in datafame that was inserted into the middle of the dataframe from combining silos
-colnames(silo3.9)[colnames(silo3.9)=="X3_S3.Protein"] <- "Protein"
 silo3.9 <- silo3.9[-(which(grepl('9_S9-Protein', silo3.9$Protein))),]
-write.csv(silo3.9, file = "silo3_9.csv")
 
 #remove contaminant proteins (22 total)
 proteins3_9<-subset(silo3.9, grepl(paste('CHOYP', collapse="|"), silo3.9$Protein))
@@ -27,7 +21,9 @@ which(grepl('ALBU_BOVIN', proteins3_9$Protein)) #ensure contaminants are gone
 rownames(proteins3_9)<-proteins3_9$Protein
 silo3_9<-proteins3_9[,2:9]
 names(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
-write.csv(silo3_9, file = "silo3_9.csv")
+
+#save silo3_9 without contaminant proteins
+write.csv(silo3_9, file = "silo3_9-edited.csv")
 
 ###begin old code###
 
