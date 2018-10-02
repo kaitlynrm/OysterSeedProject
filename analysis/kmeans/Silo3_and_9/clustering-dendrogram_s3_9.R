@@ -27,7 +27,7 @@ which(grepl('ALBU_BOVIN', proteins3_9$Protein)) #ensure contaminants are gone
 rownames(proteins3_9)<-proteins3_9$Protein
 silo3_9<-proteins3_9[,2:9]
 names(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
-write.csv(silo3_9, file = "silo3_9-edited.csv")
+write.csv(silo3_9, file = "silo3_9.csv")
 
 ###begin old code###
 
