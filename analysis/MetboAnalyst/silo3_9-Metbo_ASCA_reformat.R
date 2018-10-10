@@ -5,7 +5,7 @@ library(MetStaT)
 ### Reformat Silo3_9 dataframe ###
 
 #read in Oyster Temp. protein data frame
-data <- read.csv("Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9-edited.csv")
+data <- read.csv("kmeans/Silo3_and_9/silo3_9-edited.csv")
 names(data) <- c("Protein", "0", "3", "5", "7", "9", "11", "13", "15")
 
 #create silo column
@@ -45,7 +45,9 @@ data$Sample <- paste("S",data$Silo,"T",data$Time, sep = "")
 #move last column (Sample) to first column
 #alternatively `which(colnames(data)=="Sample")` tells you which column it is
 data <- data[,c(ncol(data),1:ncol(data)-1)]
-write.csv(data, "Documents/Kaitlyn/Github/OysterSeedProject/analysis/MetboAnalyst/silo3_9-Metbo_format", row.names = FALSE, quote = FALSE)
+data <- data[order(data$Time),]
+
+write.csv(data, "MetboAnalyst/silo3_9-Metbo_format.csv", row.names = FALSE, quote = FALSE)
 
 #find max abundance value 
 max(data[,4:ncol(data)]) #379
@@ -129,3 +131,5 @@ ASCA.DoPermutationTest(ASCA, perm=1000)
 #1, 2, 12
 #0.119, 0.015, 1
 
+#Examine the loading values
+loadings <-  as.data.frame(ASCA$`1`$svd$v[,1])
