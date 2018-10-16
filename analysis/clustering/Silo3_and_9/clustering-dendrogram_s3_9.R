@@ -26,25 +26,26 @@ names(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
 #save silo3_9 without contaminant proteins
 write.csv(silo3_9, file = "silo3_9-edited.csv")
 
+##############################################################################################################################
 ###begin clustering###
 silo3_9 <- read.csv("silo3_9-edited.csv", row.names = 1)
 source("../biostats.R")
 
-#use bray-curtis dissimilarity for clustering
+#use euclidean dissimilarity for clustering
 library(vegan)
 nsaf.euc<-vegdist(silo3_9, method='euclidean')
 
 #average clustering method to cluster the data
 library(cluster)
-clust.avg<-hclust(nsaf.euc, method='ward.D2')
+clust.avg<-hclust(nsaf.euc, method='average')
 
 coef.hclust(clust.avg)
-#agglomerate coefficent = 0.999413 which means my proteins are more likely to be added into a new cluster
+#agglomerate coefficent = 0.9959262 which means my proteins are more likely to be added into a new cluster
 
 #cophenetic correlation
 #how well cluster hierarchy represents original object-by-object dissimilarity space
 cor(nsaf.euc, cophenetic(clust.avg))
-#Above 0.75 is good for a cophenetic correlation; 0.6299225
+#Above 0.75 is good for a cophenetic correlation; 0.6299225 for ward.D2, 0.9433488 for average
 
 #Scree plot
 hclus.scree(clust.avg)
@@ -57,21 +58,21 @@ dev.off()
 
 #cut dendrogram at selected height (example is given for 0.5) based on what looks reasonable because SCIENCE
 plot(clust.avg)
-rect.hclust(clust.avg, h=200)
+rect.hclust(clust.avg, h=100)
 
 jpeg(filename = "s3_9_dendrogram.jpeg", width = 1000, height = 1000)
 plot(clust.avg)
-rect.hclust(clust.avg, h=200)
+rect.hclust(clust.avg, h=100)
 dev.off()
 
 #this looks reasonable
-clust.class<-cutree(clust.avg, h=200)
-max(clust.class) #38 clusters
+clust.class<-cutree(clust.avg, h=100)
+max(clust.class) #41 clusters
 
 #Cluster Freq table
 silo3_9.freq <- data.frame(table(clust.class))
 
-write.csv(silo3_9.freq, file = "silo3_9-freq")
+write.csv(silo3_9.freq, file = "silo3_9-freq.csv")
 
 #Make df
 silo3_9.clus <- data.frame(clust.class)
@@ -115,5 +116,7 @@ merge <- merge(silo3_9.annotated, silo3_9.clus, by.x = "Protein.ID", by.y = "S3_
 merge2 <- merge %>% select(Silo, everything())
 merge3 <- merge2 %>% select(Cluster, everything())
 
-write.csv(merge3, file = "silo3_9-anno_clus")
+write.csv(merge3, file = "silo3_9-anno_clus.csv")
+
+#Now I need to remove or subset proteins that are in the same clsuter for both silos
 
