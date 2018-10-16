@@ -72,7 +72,7 @@ max(clust.class) #41 clusters
 #Cluster Freq table
 silo3_9.freq <- data.frame(table(clust.class))
 
-write.csv(silo3_9.freq, file = "silo3_9-freq.csv")
+write.csv(silo3_9.freq, file = "silo3_9-freq.csv", row.names = FALSE)
 
 #Make df
 silo3_9.clus <- data.frame(clust.class)
@@ -116,7 +116,25 @@ merge <- merge(silo3_9.annotated, silo3_9.clus, by.x = "Protein.ID", by.y = "S3_
 merge2 <- merge %>% select(Silo, everything())
 merge3 <- merge2 %>% select(Cluster, everything())
 
-write.csv(merge3, file = "silo3_9-anno_clus.csv")
+write.csv(merge3, file = "silo3_9-anno_clus.csv", row.names = FALSE)
 
-#Now I need to remove or subset proteins that are in the same clsuter for both silos
+###Now I need to remove or subset proteins that are in the same cluster for both silos
+
+#test with anti_join - didn't work
+#s3.test <- filter(merge3, Silo == 3)
+#s9.test <- filter(merge3, Silo == 9)
+
+#s9.prot <- anti_join(s9.test, s3.test, by="Cluster")
+#s3.prot <- anti_join(s3.test, s9.test, by="Cluster")
+
+#test with duplicated
+library(data.table)
+unique.prot <- merge3[!(duplicated(merge3[c("Protein.ID", "Cluster")]) | duplicated(merge3[c("Protein.ID", "Cluster")], fromLast = TRUE)), ]
+
+#determine if duplicates were removed
+anyDuplicated(merge3[,c("Protein.ID","Cluster")]) #returns first duplicated rows, in this case columns 1 and 2 are duplicated so 2 is returned
+anyDuplicated(test[,c("Protein.ID","Cluster")]) #returns 0 because there are no duplicates
+
+write.csv(unique.prot, file = "unique-clus-prot-silo3_9.csv", row.names = FALSE)
+
 
