@@ -48,12 +48,11 @@ data <- data[,c(ncol(data),1:ncol(data)-1)]
 data <- data[order(data$Time),]
 
 write.csv(data, "MetboAnalyst/silo3_9-Metbo_format.csv", row.names = FALSE, quote = FALSE)
+
 #find max abundance value 
 max(data[,4:ncol(data)]) #379
 
-#create matrix tsystem("awk '$1=\"3_\"$1' /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo3/silo3.csv >> /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9.csv")
-system("awk '$1=\"9_\"$1' /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo9/silo9.csv >> /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9.csv")
-#pass to ASCA command as data (abundances are observations)
+#create matrix to pass to ASCA command as data (abundances are observations)
 ASCAX <- as.matrix(data[,-c(1:3)])
 #create matrix to pass to ASCA command as levels (time and temp are factors)
 ASCAF <- as.matrix(data[,2:3])
