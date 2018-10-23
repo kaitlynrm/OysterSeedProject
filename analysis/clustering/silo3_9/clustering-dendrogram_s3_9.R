@@ -7,6 +7,7 @@
 #Option 3: create a dataframe to include all proteins (even undetected) in analysis
 #Option 4: a dataframe with all proteins was already created and just needs to be loaded in 
 
+#note a few paths for loading in data are changed for option 4 right now
 
 #################################################################   OPTION 1    #############################################################
 
@@ -136,7 +137,7 @@ coef.hclust(clust.avg)
 #cophenetic correlation
 #how well cluster hierarchy represents original object-by-object dissimilarity space
 cor(nsaf.euc, cophenetic(clust.avg))
-#Above 0.75 is good for a cophenetic correlation; (0.6299225 for ward.D2, 0.9433488 for average for detected) (0.)
+#Above 0.75 is good for a cophenetic correlation; (0.6299225 for ward.D2, 0.9433488 for average for detected) (0.9476519 for all proteins)
 
 #Scree plot
 hclus.scree(clust.avg)
@@ -172,7 +173,7 @@ silo3_9.clus <- cbind(names, silo3_9.clus)
 rownames(silo3_9.clus) <- NULL
 colnames(silo3_9.clus)[1] <- "S3_9.Protein"
 colnames(silo3_9.clus)[2] <- "Cluster"
-silo3_9.norownames <- read.csv("silo3_9-edited.csv")
+silo3_9.norownames <- read.csv("../silo3_9-edited.csv")
 
 silo3_9.all <- merge(silo3_9.clus, silo3_9.norownames, by.x = "S3_9.Protein", by.y = "X")
 colnames(silo3_9.all) <- c("Protein", "Cluster", "0", "3", "5", "7", "9", "11", "13", "15")
@@ -205,7 +206,7 @@ silo3_9.edit <- silo3_9.edit %>% select(Silo, everything())
 silo3_9.edit <- silo3_9.edit %>% select(Cluster, everything())
 
 #Obtain annotated Silo3_9 sheet with clusters
-all.annotated <- read.csv("../../../raw_data/os-allsilos-stats_and_annot.csv")
+all.annotated <- read.csv("../../../../data/allsilos-tag_and_annot.csv")
 annotations <- all.annotated[,-c(2:23)]
 
 silo3_9.annot <- merge(silo3_9.edit, annotations, by.x = "Protein", by.y = "Protein.ID")
