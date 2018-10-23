@@ -1,5 +1,14 @@
-###Kmeans clusering for multiple silos###
+### Hierarchical clusering for multiple silos###
 
+#create dataframe from raw file instead of merging two seperated files
+#
+
+
+
+
+
+
+###############################################################################################################################
 #Create new dataframe
 #deliminate silo in protein name and combine silos
 system("awk '$1=\"3_\"$1' /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/silo3/silo3.csv >> /home/srlab/Documents/Kaitlyn/Github/OysterSeedProject/analysis/kmeans/Silo3_and_9/silo3_9.csv")
@@ -25,10 +34,15 @@ names(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
 
 #save silo3_9 without contaminant proteins
 write.csv(silo3_9, file = "silo3_9-edited.csv")
-
 ##############################################################################################################################
-###begin clustering###
+
+
+### Start here if dataframe combining silos has already been created! ###
+
+
+
 silo3_9 <- read.csv("silo3_9-edited.csv", row.names = 1)
+colnames(silo3_9) <- c(0, 3, 5, 7, 9, 11, 13, 15)
 source("../biostats.R")
 
 #use euclidean dissimilarity for clustering
@@ -84,6 +98,7 @@ colnames(silo3_9.clus)[2] <- "Cluster"
 silo3_9.norownames <- read.csv("silo3_9-edited.csv")
 
 silo3_9.all <- merge(silo3_9.clus, silo3_9.norownames, by.x = "S3_9.Protein", by.y = "X")
+colnames(silo3_9.all) <- c("Protein", "Cluster", "0", "3", "5", "7", "9", "11", "13", "15")
 
 #this gives matrix of 2 columns, first with proteins second with cluster assignment
 #Line plots for each cluster
@@ -91,50 +106,67 @@ library(ggthemes)
 library(reshape)
 library(ggplot2)
 
-melted_all_s3_9<-melt(silo3_9.all, id.vars=c('S3_9.Protein', 'Cluster'))
-
-ggplot(melted_all_s3_9, aes(x=variable, y=value, group=S3_9.Protein)) +geom_line(alpha=0.1) + theme_bw() +
-  facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
+melted_all_s3_9<-melt(silo3_9.all, id.vars=c('Protein', 'Cluster'))
 
 jpeg(filename = "silo3_9clus_lineplots.jpeg", width = 1000, height = 1000)
-ggplot(melted_all_s3_9, aes(x=variable, y=value, group=S3_9.Protein)) +geom_line(alpha=0.1) + theme_bw() +
+ggplot(melted_all_s3_9, aes(x=variable, y=value, group=Protein)) +geom_line(alpha=0.8) + theme_bw() +
   facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
 dev.off()
 
-#Merge Silo clusters with Silo annotated and tagged datasheet
-library(dplyr)
+#Line plot with color for each silo
 
-raw <- read.csv("../../../raw_data/os-allsilos-stats_and_annot.csv")
-silo3_9.annotated <- raw[,-c(3, 6, 9, 12, 15, 18, 21)]
-silo3_9.clus$Silo <- substr(silo3_9.clus$S3_9.Protein,1,1)
-class(silo3_9.clus$S3_9.Protein)
-silo3_9.clus$S3_9.Protein <- as.character(unlist(silo3_9.clus$S3_9.Protein))
-silo3_9.clus$S3_9.Protein <- substr(silo3_9.clus$S3_9.Protein, 3, nchar(silo3_9.clus$S3_9.Protein))
-merge <- merge(silo3_9.annotated, silo3_9.clus, by.x = "Protein.ID", by.y = "S3_9.Protein")
+jpeg(filename = "bycolour-silo3_9clus_lineplots.jpeg", width = 1000, height = 1000)
 
-#reorganize
-merge2 <- merge %>% select(Silo, everything())
-merge3 <- merge2 %>% select(Cluster, everything())
+ggplot(melted_all_s3_9, aes(x=variable, y=value, group=Protein, color = substr(melted_all_s3_9$Protein, 0, 1))) +geom_line(alpha=0.8) + theme_bw() +
+         facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
 
-write.csv(merge3, file = "silo3_9-anno_clus.csv", row.names = FALSE)
+dev.off()
 
-###Now I need to remove or subset proteins that are in the same cluster for both silos
+#Seperate Silo from protein name
+silo3_9.edit <- silo3_9.all
+silo3_9.edit$Silo <- substr(silo3_9.edit$Protein,1,1)
 
-#test with anti_join - didn't work
-#s3.test <- filter(merge3, Silo == 3)
-#s9.test <- filter(merge3, Silo == 9)
+#Remove protein silo notation and organize
+class(silo3_9.edit$Protein)
+silo3_9.edit$Protein <- as.character(unlist(silo3_9.edit$Protein))
+silo3_9.edit$Protein <- substr(silo3_9.edit$Protein, 3, nchar(silo3_9.edit$Protein))
+silo3_9.edit <- silo3_9.edit %>% select(Silo, everything())
+silo3_9.edit <- silo3_9.edit %>% select(Cluster, everything())
 
-#s9.prot <- anti_join(s9.test, s3.test, by="Cluster")
-#s3.prot <- anti_join(s3.test, s9.test, by="Cluster")
+#Obtain annotated Silo3_9 sheet with clusters
+all.annotated <- read.csv("../../../raw_data/os-allsilos-stats_and_annot.csv")
+annotations <- all.annotated[,-c(2:23)]
 
-#test with duplicated
+silo3_9.annot <- merge(silo3_9.edit, annotations, by.x = "Protein", by.y = "Protein.ID")
+write.csv(final.unique.prot, file = "silo3_9-clus-annot.csv", row.names = FALSE)
+
+#Parse out unique proteins
 library(data.table)
-unique.prot <- merge3[!(duplicated(merge3[c("Protein.ID", "Cluster")]) | duplicated(merge3[c("Protein.ID", "Cluster")], fromLast = TRUE)), ]
+unique.prot <- silo3_9.edit[!(duplicated(silo3_9.edit[c("Protein", "Cluster")]) | duplicated(silo3_9.edit[c("Protein", "Cluster")], fromLast = TRUE)), ]
 
 #determine if duplicates were removed
-anyDuplicated(merge3[,c("Protein.ID","Cluster")]) #returns first duplicated rows, in this case columns 1 and 2 are duplicated so 2 is returned
-anyDuplicated(test[,c("Protein.ID","Cluster")]) #returns 0 because there are no duplicates
+anyDuplicated(silo3_9.edit[,c("Protein","Cluster")]) #returns first duplicated rows
+anyDuplicated(unique.prot[,c("Protein","Cluster")]) #returns 0 because there are no duplicates
 
-write.csv(unique.prot, file = "unique-clus-prot-silo3_9.csv", row.names = FALSE)
+#Annotate unique proteins
+final.unique.prot <- merge(unique.prot, annotations, by.x = "Protein", by.y = "Protein.ID")
 
+write.csv(final.unique.prot, file = "unique-clus-prot-silo3_9.csv", row.names = FALSE)
 
+#Remove annotations
+s39.unq.abudance <- final.unique.prot[,-c(12:64)]
+
+#Now I need to have only one column for each day rather than one column per silo per day
+protein.names <-  data.frame(paste(s39.unq.abudance$Silo, "_", s39.unq.abudance$Protein, sep = ""))
+colnames(protein.names) <- "Protein"
+plot.unq.prot <-  silo3_9.all[which(silo3_9.all$Protein %in% protein.names$Protein),]
+
+#Plot abudances of unique proteins
+unq_melted_all_s3_9<-melt(plot.unq.prot, id.vars=c('Protein', 'Cluster'))
+
+jpeg(filename = "bycolour-silo3_9-unq_lineplots.jpeg", width = 1000, height = 1000)
+
+ggplot(unq_melted_all_s3_9, aes(x=variable, y=value, group=Protein, color = substr(unq_melted_all_s3_9$Protein, 0, 1))) +geom_line(alpha=0.8) + theme_bw() +
+  facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
+
+dev.off()
