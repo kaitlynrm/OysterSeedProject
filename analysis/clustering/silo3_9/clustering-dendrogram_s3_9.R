@@ -100,7 +100,7 @@ silo3.9 <- rbind(silo3, silo9)
 silo3_9<-subset(silo3.9, grepl(paste('CHOYP', collapse="|"), silo3.9$Protein))
 which(grepl('ALBU_BOVIN', silo3_9$Protein)) #ensure contaminants are gone
 
-write.csv(silo3_9, "silo3_9-allproteins.csv")
+write.csv(silo3_9, "silo3_9-all_proteins.csv")
 silo3_9 <- read.csv("silo3_9-all_proteins.csv", row.names = 1)
 
 colnames(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
@@ -173,8 +173,11 @@ silo3_9.clus <- cbind(names, silo3_9.clus)
 rownames(silo3_9.clus) <- NULL
 colnames(silo3_9.clus)[1] <- "S3_9.Protein"
 colnames(silo3_9.clus)[2] <- "Cluster"
-silo3_9.norownames <- read.csv("../silo3_9-edited.csv")
 
+#load in file to get abundance values
+silo3_9.norownames <- read.csv("silo3_9-all_proteins.csv")
+
+#merge for abundance values
 silo3_9.all <- merge(silo3_9.clus, silo3_9.norownames, by.x = "S3_9.Protein", by.y = "X")
 colnames(silo3_9.all) <- c("Protein", "Cluster", "0", "3", "5", "7", "9", "11", "13", "15")
 
@@ -222,6 +225,9 @@ anyDuplicated(unique.prot[,c("Protein","Cluster")]) #returns 0 because there are
 
 #Annotate unique proteins
 final.unique.prot <- merge(unique.prot, annotations, by.x = "Protein", by.y = "Protein.ID")
+
+sum(final.unique.prot$Silo == "3")
+sum(final.unique.prot$Silo == "9")
 
 write.csv(final.unique.prot, file = "unique-clus-prot-silo3_9.csv", row.names = FALSE)
 
