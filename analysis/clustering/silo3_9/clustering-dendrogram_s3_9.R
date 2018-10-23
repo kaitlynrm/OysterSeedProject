@@ -1,23 +1,15 @@
-### Hierarchical clusering for multiple silos###
-#review the document to find your starting place
 
-##############################################################################################################################
-#Create dataframe from raw file instead of merging two seperated files 
-#this approach will include all proteins detected in either silo even if it was only in 1 silo
-#
+### Hierarchical clusering
+#REVIEW the DOCUMENT to find your starting place first!!!
 
-
-
+#Option 1: create a dataframe to include only detected proteins in analysis
+#Option 2: a dataframe with only detected proteins was already created so it just needs to be loaded in first
+#Option 3: create a dataframe to include all proteins (even undetected) in analysis
+#Option 4: a dataframe with all proteins was already created and just needs to be loaded in 
 
 
+#################################################################   OPTION 1    #############################################################
 
-
-
-
-##############################################################################################################################
-
-
-##############################################################################################################################
 #Create new from seperated silos 
 #this approach will not include any proteins that were never detected
 #deliminate silo in protein name and combine silos with bash
@@ -44,13 +36,91 @@ names(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
 
 #save silo3_9 without contaminant proteins
 write.csv(silo3_9, file = "silo3_9-edited.csv")
+
+source("../biostats.R")
+
 ##############################################################################################################################
 
 
-#Load data
+#################################################################   OPTION 2    #############################################################
+#Load in data made in bash
+setwd("Documents/Kaitlyn/Github/OysterSeedProject/analysis/clustering/silo3_9/")
 silo3_9 <- read.csv("silo3_9-edited.csv", row.names = 1)
 colnames(silo3_9) <- c(0, 3, 5, 7, 9, 11, 13, 15)
+
 source("../biostats.R")
+
+##############################################################################################################################
+
+
+#################################################################   OPTION 3    #############################################################
+
+#Create dataframe from raw file instead of merging two seperated files 
+#this approach will include all proteins detected in either silo even if it was only in 1 silo
+setwd("Documents/robertslab/labnotebook/analysis/clustering/silo3_9/all_proteins")
+all.silos <- read.csv("../../../../data/ABACUSdata_only.csv")
+colnames(all.silos)[1] <- "Protein"
+head(all.silos)
+
+#seperate silos
+silo3 <- all.silos[,c(1,2,4,7,10,13,16,19,22)]
+
+silo3$Protein <- sub("^", "3_", silo3$Protein)
+colnames(silo3) <- c("Protein", "0", "3", "5", "7", "9", "11", "13", "15")
+
+#load in all dected proteins in silo 3 without nonabundant proteins
+silo3.detected <- read.csv("../../silo3/silo3.csv")
+str(silo3)
+colnames(silo3.detected) <- c("Protein", "0", "3", "5", "7", "9", "11", "13", "15")
+silo3.detected$Protein <- sub("^", "3_", silo3.detected$Protein)
+
+#confirm different row lengths
+nrow(silo3) #8443
+nrow(silo3.detected) #7345
+8443-7345 #1098 undetected proteins
+
+#look at list of undected proteins
+library(dplyr)
+silo3.undetected <- anti_join(silo3, silo3.detected, by = "Protein")
+nrow(silo3.undetected) #confirming it is still 1098
+View(silo3.undetected)
+
+#so all proteins are included in silo3 (1098 proteins were not detected but will be added to the cluster analysis)
+
+#do the same for silo9
+silo9 <- all.silos[,c(1,2,5,8,11,14,17,20,23)]
+silo9$Protein <- sub("^", "9_", silo9$Protein)
+colnames(silo9) <- c("Protein", "0", "3", "5", "7", "9", "11", "13", "15")
+
+#combine both dataframes
+silo3.9 <- rbind(silo3, silo9)
+
+#remove contaminant proteins (22 total)
+silo3_9<-subset(silo3.9, grepl(paste('CHOYP', collapse="|"), silo3.9$Protein))
+which(grepl('ALBU_BOVIN', silo3_9$Protein)) #ensure contaminants are gone
+
+write.csv(silo3_9, "silo3_9-allproteins.csv")
+silo3_9 <- read.csv("silo3_9-all_proteins.csv", row.names = 1)
+
+colnames(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
+source("../../biostats.R")
+
+##############################################################################################################################
+
+
+#################################################################   OPTION 4    #############################################################
+
+setwd("Documents/robertslab/labnotebook/analysis/clustering/silo3_9/all_proteins")
+silo3_9 <- read.csv("silo3_9-all_proteins.csv", row.names = 1)
+colnames(silo3_9) <- c("0", "3", "5", "7", "9", "11", "13", "15")
+
+source("../../biostats.R")
+
+##############################################################################################################################
+
+
+#Data is loaded in as silo3_9 with proteins as row names and biostats is loaded
+#Now start cluster analysis!
 
 #use euclidean dissimilarity for clustering
 library(vegan)
@@ -61,12 +131,12 @@ library(cluster)
 clust.avg<-hclust(nsaf.euc, method='average')
 
 coef.hclust(clust.avg)
-#agglomerate coefficent = 0.9959262 which means my proteins are more likely to be added into a new cluster
+#agglomerate coefficent = (0.9964979 all) (0.9959262 detected) which means my proteins are more likely to be added into a new cluster
 
 #cophenetic correlation
 #how well cluster hierarchy represents original object-by-object dissimilarity space
 cor(nsaf.euc, cophenetic(clust.avg))
-#Above 0.75 is good for a cophenetic correlation; 0.6299225 for ward.D2, 0.9433488 for average
+#Above 0.75 is good for a cophenetic correlation; (0.6299225 for ward.D2, 0.9433488 for average for detected) (0.)
 
 #Scree plot
 hclus.scree(clust.avg)
