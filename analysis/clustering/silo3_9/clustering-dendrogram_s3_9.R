@@ -1,9 +1,9 @@
 
-### Hierarchical clusering
-#REVIEW the DOCUMENT to find your starting place first!!!
+### Hierarchical clustering
+#REVIEW the document to find your starting place first!!!
 
 #Option 1: create a dataframe to include only detected proteins in analysis
-#Option 2: a dataframe with only detected proteins was already created so it just needs to be loaded in first
+#Option 2: a dataframe with only detected proteins was already created and just needs to be loaded in
 #Option 3: create a dataframe to include all proteins (even undetected) in analysis
 #Option 4: a dataframe with all proteins was already created and just needs to be loaded in 
 
@@ -44,7 +44,7 @@ source("../biostats.R")
 
 
 #################################################################   OPTION 2    #############################################################
-#Load in data made in bash
+#Load in data made in bash for detected proteins
 setwd("Documents/Kaitlyn/Github/OysterSeedProject/analysis/clustering/silo3_9/")
 silo3_9 <- read.csv("silo3_9-edited.csv", row.names = 1)
 colnames(silo3_9) <- c(0, 3, 5, 7, 9, 11, 13, 15)
