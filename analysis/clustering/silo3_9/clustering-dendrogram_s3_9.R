@@ -6,6 +6,7 @@
 #Option 2: a dataframe with only detected proteins was already created and just needs to be loaded in
 #Option 3: create a dataframe to include all proteins (even undetected) in analysis
 #Option 4: a dataframe with all proteins was already created and just needs to be loaded in 
+#Optional: remove day 0
 
 #note a few paths for loading in data are changed for option 4 right now
 
@@ -119,6 +120,11 @@ source("../../biostats.R")
 
 ##############################################################################################################################
 
+#####################################OPTIONAL: Remove Day 0#################################################################################
+
+silo3_9 <- silo3_9[,2:8]
+
+##############################################################################################################################
 
 #Data is loaded in as silo3_9 with proteins as row names and biostats is loaded
 #Now start cluster analysis!
@@ -132,17 +138,20 @@ library(cluster)
 clust.avg<-hclust(nsaf.euc, method='average')
 
 coef.hclust(clust.avg)
-#agglomerate coefficent = (0.9964979 all) (0.9959262 detected) which means my proteins are more likely to be added into a new cluster
+#agglomerate coefficent = (0.9964979 all) (0.9959262 only detected) which means my proteins are more likely to be added into a new cluster
+#without day 0 = 0.9976217
 
 #cophenetic correlation
 #how well cluster hierarchy represents original object-by-object dissimilarity space
 cor(nsaf.euc, cophenetic(clust.avg))
-#Above 0.75 is good for a cophenetic correlation; (0.6299225 for ward.D2, 0.9433488 for average for detected) (0.9476519 for all proteins)
+#Above 0.75 is good for a cophenetic correlation
+#(0.6299225 with ward.D2 and 0.9433488 with average for only detected) (0.9476519 for all proteins)
+#without day 0 = 0.9630485
 
 #Scree plot
 hclus.scree(clust.avg)
 
-jpeg(filename = "s3_9_scree.jpeg", width = 1000, height = 1000)
+jpeg(filename = "no0-s3_9_scree.jpeg", width = 1000, height = 1000)
 hclus.scree(clust.avg)
 dev.off()
 
@@ -150,21 +159,22 @@ dev.off()
 
 #cut dendrogram at selected height (example is given for 0.5) based on what looks reasonable because SCIENCE
 plot(clust.avg)
-rect.hclust(clust.avg, h=100)
+rect.hclust(clust.avg, h=50)
+#100 for all proteins but 50 without day 0
 
-jpeg(filename = "s3_9_dendrogram.jpeg", width = 1000, height = 1000)
+jpeg(filename = "no0-s3_9_dendrogram.jpeg", width = 1000, height = 1000)
 plot(clust.avg)
-rect.hclust(clust.avg, h=100)
+rect.hclust(clust.avg, h=50)
 dev.off()
 
 #this looks reasonable
-clust.class<-cutree(clust.avg, h=100)
-max(clust.class) #41 clusters
+clust.class<-cutree(clust.avg, h=50)
+max(clust.class) #41 clusters, without day 0 = 84
 
 #Cluster Freq table
 silo3_9.freq <- data.frame(table(clust.class))
 
-write.csv(silo3_9.freq, file = "silo3_9-freq.csv", row.names = FALSE)
+write.csv(silo3_9.freq, file = "no0-silo3_9-freq.csv", row.names = FALSE)
 
 #Make df
 silo3_9.clus <- data.frame(clust.class)
@@ -190,10 +200,10 @@ library(ggplot2)
 melted_all_s3_9<-melt(silo3_9.all, id.vars=c('Protein', 'Cluster'))
 silo <- substr(melted_all_s3_9$Protein, 0, 1)
 
-jpeg(filename = "bycolour-silo3_9clus_lineplots.jpeg", width = 1000, height = 1000)
+jpeg(filename = "no0-bycolour-silo3_9clus_lineplots.jpeg", width = 1000, height = 1000)
 
 ggplot(melted_all_s3_9, aes(x=variable, y=value, group=Protein, color = silo)) +geom_line(alpha=0.8) + theme_bw() +
-         facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
+  facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
 
 dev.off()
 
@@ -205,6 +215,8 @@ silo3_9.edit$Silo <- substr(silo3_9.edit$Protein,1,1)
 class(silo3_9.edit$Protein)
 silo3_9.edit$Protein <- as.character(unlist(silo3_9.edit$Protein))
 silo3_9.edit$Protein <- substr(silo3_9.edit$Protein, 3, nchar(silo3_9.edit$Protein))
+
+library(dplyr)
 silo3_9.edit <- silo3_9.edit %>% select(Silo, everything())
 silo3_9.edit <- silo3_9.edit %>% select(Cluster, everything())
 
@@ -213,7 +225,7 @@ all.annotated <- read.csv("../../../../data/allsilos-tag_and_annot.csv")
 annotations <- all.annotated[,-c(2:23)]
 
 silo3_9.annot <- merge(silo3_9.edit, annotations, by.x = "Protein", by.y = "Protein.ID")
-write.csv(silo3_9.annot, file = "silo3_9-clus-annot.csv", row.names = FALSE)
+write.csv(silo3_9.annot, file = "no0-silo3_9-clus-annot.csv", row.names = FALSE)
 
 #Parse out unique proteins
 library(data.table)
@@ -229,7 +241,7 @@ final.unique.prot <- merge(unique.prot, annotations, by.x = "Protein", by.y = "P
 sum(final.unique.prot$Silo == "3")
 sum(final.unique.prot$Silo == "9")
 
-write.csv(final.unique.prot, file = "unique-clus-prot-silo3_9.csv", row.names = FALSE)
+write.csv(final.unique.prot, file = "no0-unique-clus-prot-silo3_9.csv", row.names = FALSE)
 
 #Remove annotations
 s39.unq.abudance <- final.unique.prot[,-c(12:64)]
@@ -243,7 +255,7 @@ plot.unq.prot <-  silo3_9.all[which(silo3_9.all$Protein %in% protein.names$Prote
 unq_melted_all_s3_9<-melt(plot.unq.prot, id.vars=c('Protein', 'Cluster'))
 silo <- substr(unq_melted_all_s3_9$Protein, 0, 1)
 
-jpeg(filename = "bycolour-silo3_9-unq_lineplots.jpeg", width = 1000, height = 1000)
+jpeg(filename = "no0-bycolour-silo3_9-unq_lineplots.jpeg", width = 1000, height = 1000)
 
 ggplot(unq_melted_all_s3_9, aes(x=variable, y=value, group=Protein, color = silo)) +geom_line(alpha=0.8) + theme_bw() +
   facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
