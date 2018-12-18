@@ -1,0 +1,276 @@
+"","Protein.ID","Uniprot","Protein.names","fc7"
+"39","CHOYP_DGRI_GH20300.1.1|m.57587","Q63ZH8","Protein FAM136A",-2.4594316186373
+"41","CHOYP_DHSO.2.2|m.29745","P0DMQ6","Sorbitol dehydrogenase (EC 1.1.1.14) (L-iditol 2-dehydrogenase)",-2.70951129135145
+"52","CHOYP_FABP.1.2|m.51611","O45035","Fatty acid-binding protein (Sj-FABPc) (Sj14FABP)",-2.25985100456466
+"183","CHOYP_SYFA.1.1|m.53257","Q08BI9","Calcium uniporter protein, mitochondrial",-3.96936229591612
+"188","CHOYP_TITIN.19.19|m.66288","A2ASS6","Titin (EC 2.7.11.1) (Connectin)",4.24792751344359
+"213","CHOYP_BIG1.1.3|m.6444","Q9LPC5","Brefeldin A-inhibited guanine nucleotide-exchange protein 3 (BIG3) (ARF guanine-nucleotide exchange factor BIG3) (Protein EMBRYO SAC DEVELOPMENT ARREST 10)",-2.32192809488736
+"234","CHOYP_BRAFLDRAFT_81733.1.1|m.213","A4IHY1","Proteasome assembly chaperone 1",-2.25985100456466
+"266","CHOYP_HSPA12A.21.27|m.57005","A6Q421","Chaperone protein DnaK (HSP70) (Heat shock 70 kDa protein) (Heat shock protein 70)",-3.0896936467371
+"286","CHOYP_LOC100367612.1.1|m.37487","Q5XI13","Glutamate-rich WD repeat-containing protein 1",-2.04280378682109
+"309","CHOYP_LOC100711334.1.1|m.16928","P17078","60S ribosomal protein L35",-3.70951129135145
+"320","CHOYP_LOC101068003.1.1|m.14900","Q9NZJ6","Ubiquinone biosynthesis O-methyltransferase, mitochondrial (3-demethylubiquinol 3-O-methyltransferase) (EC 2.1.1.64) (Polyprenyldihydroxybenzoate methyltransferase) (EC 2.1.1.114)",-2.70951129135145
+"365","CHOYP_PLCD1.1.1|m.63908","P51178","1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-1 (EC 3.1.4.11) (Phosphoinositide phospholipase C-delta-1) (Phospholipase C-III) (PLC-III) (Phospholipase C-delta-1) (PLC-delta-1)",-2.70951129135145
+"419","CHOYP_BRAFLDRAFT_74594.1.3|m.1187","Q6GMV2","SET and MYND domain-containing protein 5 (EC 2.1.1.-) (Protein NN8-4AG) (Retinoic acid-induced protein 15)",-2.70951129135145
+"439","CHOYP_DRE2.2.2|m.41479","Q5EAC7","Anamorsin (Cytokine-induced apoptosis inhibitor 1) (Fe-S cluster assembly protein DRE2 homolog)",-2.16992500144231
+"467","CHOYP_LOC100366428.1.1|m.3740","Q504A5","Probable thiopurine S-methyltransferase (Thiopurine methyltransferase) (EC 2.1.1.67)",-2.16992500144231
+"529","CHOYP_NRDC.1.1|m.28526","Q8BHG1","Nardilysin (EC 3.4.24.61) (N-arginine dibasic convertase) (NRD convertase) (NRD-C) (Nardilysin convertase)",-2.25985100456466
+"605","CHOYP_C1QL4L.3.7|m.5968","Q86Z23","Complement C1q-like protein 4 (C1q and tumor necrosis factor-related protein 11) (C1q/TNF-related protein 11)",-2.4594316186373
+"609","CHOYP_CNOT2.1.2|m.47530","Q9NZN8","CCR4-NOT transcription complex subunit 2 (CCR4-associated factor 2)",-3.0896936467371
+"685","CHOYP_LOC100641267.2.2|m.57947","Q829L6","Ectoine dioxygenase (EC 1.14.11.-) (Ectoine hydroxylase)",-2.70951129135145
+"691","CHOYP_LOC100877689.1.2|m.14376","Q9ERG0","LIM domain and actin-binding protein 1 (Epithelial protein lost in neoplasm) (mEPLIN)",2.70043971814109
+"698","CHOYP_LOC101077542.1.1|m.58180","Q26636","Cathepsin L (EC 3.4.22.15) [Cleaved into: Cathepsin L heavy chain; Cathepsin L light chain]",2
+"731","CHOYP_PSME4.1.1|m.18992","Q6NRP2","Proteasome activator complex subunit 4 (Proteasome activator PA200)",-2
+"749","CHOYP_TBB.5.7|m.60062","P38552","Galectin-4 (Gal-4) (L-36 lactose-binding protein) (L36LBP) (Lactose-binding lectin 4)",-3.41902258270291
+"751","CHOYP_TBCD.1.2|m.35202","Q9BTW9","Tubulin-specific chaperone D (Beta-tubulin cofactor D) (tfcD) (SSD-1) (Tubulin-folding cofactor D)",-2.16992500144231
+"761","CHOYP_contig_026700|m.30399","Q61554","Fibrillin-1 [Cleaved into: Asprosin]",3.32192809488736
+"784","CHOYP_BRAFLDRAFT_211853.1.1|m.18681","Q1JQA5","Neudesin (Neuron-derived neurotrophic factor) (SCIRP10-related protein) (Spinal cord injury-related protein 10)",-3.96936229591612
+"792","CHOYP_BRAFLDRAFT_91394.1.1|m.16068","Q9CQF9","Prenylcysteine oxidase (EC 1.8.3.5)",-3.70951129135145
+"805","CHOYP_CTND2.1.1|m.12206","P98203","Armadillo repeat protein deleted in velo-cardio-facial syndrome homolog",-2
+"844","CHOYP_LOC100368394.1.2|m.22888","Q5T0N1","Cilia- and flagella-associated protein 70 (Tetratricopeptide repeat protein 18) (TPR repeat protein 18)",-2.58496250072116
+"848","CHOYP_LOC100369302.1.3|m.6808","Q8IX29","F-box only protein 16",2.25985100456466
+"851","CHOYP_LOC100370516.1.1|m.29182","B1H1E4","E3 ubiquitin-protein ligase arih1 (EC 2.3.2.-) (Protein ariadne-1 homolog) (ARI-1) (RING-type E3 ubiquitin transferase arih1)",-3.41902258270291
+"870","CHOYP_LOC100378414.1.1|m.34038","B4PZ52","NFU1 iron-sulfur cluster scaffold homolog, mitochondrial",-3.41902258270291
+"873","CHOYP_LOC100378691.2.2|m.40118","Q2KI56","COP9 signalosome complex subunit 7b (SGN7b) (Signalosome subunit 7b)",-4.61643218977614
+"889","CHOYP_LOC100902807.1.4|m.12152","Q28106","Contactin-1 (Neural cell surface protein F3)",-2.70951129135145
+"917","CHOYP_NEMVEDRAFT_V1G198667.14.15|m.61843","Q9JI18","Low-density lipoprotein receptor-related protein 1B (LRP-1B) (Low-density lipoprotein receptor-related protein-deleted in tumor) (LRP-DIT)",-2.25985100456466
+"1067","CHOYP_LOC100376857.1.7|m.30171","Q5N7A3","Laccase-6 (EC 1.10.3.2) (Benzenediol:oxygen oxidoreductase 6) (Diphenol oxidase 6) (Urishiol oxidase 6)",-2.4594316186373
+"1091","CHOYP_LOC101064793.1.1|m.27191","Q99471","Prefoldin subunit 5 (C-Myc-binding protein Mm-1) (Myc modulator 1)",-2.32192809488736
+"1118","CHOYP_NEMVEDRAFT_V1G242153.2.4|m.15572","Q57951","Universal stress protein MJ0531 (USP MJ0531)",3.0896936467371
+"1134","CHOYP_RHG17.1.2|m.32099","Q9CYH6","Ribosome biogenesis regulatory protein homolog",2.70951129135145
+"1189","CHOYP_BRAFLDRAFT_265208.6.7|m.52336","Q91WV7","Neutral and basic amino acid transport protein rBAT (Solute carrier family 3 member 1) (b(0,+)-type amino acid transport protein) (NBAT)",2.25985100456466
+"1248","CHOYP_LOC100370989.2.2|m.37995","P62489","DNA-directed RNA polymerase II subunit RPB7 (RNA polymerase II subunit B7) (DNA-directed RNA polymerase II subunit G)",2.70951129135145
+"1254","CHOYP_LOC100375747.1.1|m.36999","Q9P209","Centrosomal protein of 72 kDa (Cep72)",-2.25985100456466
+"1264","CHOYP_LOC100678100.1.1|m.14602","B4U7S7","Probable transcriptional regulatory protein HY04AAS1_0501",-2
+"1293","CHOYP_LOC656702.1.1|m.14425","Q13045","Protein flightless-1 homolog",-3.0896936467371
+"1319","CHOYP_RBMX.1.1|m.26723","Q7ZWA3","RNA-binding motif protein, X chromosome (Heterogeneous nuclear ribonucleoprotein G) (hnRNP G)",-2.16992500144231
+"1334","CHOYP_WDR63.1.1|m.21743","Q8IWG1","WD repeat-containing protein 63 (Testis development protein NYD-SP29)",-3.70951129135145
+"1371","CHOYP_BRAFLDRAFT_76885.1.1|m.20259","P86789","Gigasin-6",2.70951129135145
+"1382","CHOYP_CA14.1.1|m.30677","Q9ULX7","Carbonic anhydrase 14 (EC 4.2.1.1) (Carbonate dehydratase XIV) (Carbonic anhydrase XIV) (CA-XIV)",-2.25985100456466
+"1398","CHOYP_DSIM_GD13354.1.1|m.6235","O75489","NADH dehydrogenase [ubiquinone] iron-sulfur protein 3, mitochondrial (EC 1.6.5.3) (EC 1.6.99.3) (Complex I-30kD) (CI-30kD) (NADH-ubiquinone oxidoreductase 30 kDa subunit)",2.56618906572812
+"1429","CHOYP_K0020.1.1|m.1673","Q562C7","Pumilio homolog 3",-3.41902258270291
+"1431","CHOYP_KC1D.1.3|m.12297","Q6P3K7","Casein kinase I isoform delta-B (CKI-delta-B) (CKId-B) (EC 2.7.11.1)",-2.25985100456466
+"1434","CHOYP_LOC100118811.1.1|m.57633","P97526","Neurofibromin (Neurofibromatosis-related protein NF-1)",2
+"1436","CHOYP_LOC100178081.1.1|m.56365","O18334","Ras-related protein Rab6 (Protein warthog)",-3.0896936467371
+"1481","CHOYP_LOC579737.1.1|m.14356","Q64350","Translation initiation factor eIF-2B subunit epsilon (eIF-2B GDP-GTP exchange factor subunit epsilon)",-2.32192809488736
+"1516","CHOYP_PPT2A.1.2|m.30339","Q6PCJ9","Lysosomal thioesterase PPT2-A (PPT-2-A) (EC 3.1.2.-)",2.70951129135145
+"1521","CHOYP_RLA0.3.7|m.42195","O75689","Arf-GAP with dual PH domain-containing protein 1 (Centaurin-alpha-1) (Cnt-a1) (Putative MAPK-activating protein PM25)",-2.16992500144231
+"1523","CHOYP_SMG7.1.1|m.21983","Q5RJH6","Protein SMG7 (EST1-like protein C) (SMG-7 homolog)",-2.25985100456466
+"1550","CHOYP_2A5D.3.3|m.37716","Q28653","Serine/threonine-protein phosphatase 2A 56 kDa regulatory subunit delta isoform (PP2A B subunit isoform B'-delta) (PP2A B subunit isoform B'-gamma) (PP2A B subunit isoform B56-delta) (PP2A B subunit isoform PR61-delta) (PP2A B subunit isoform R5-delta)",-2.39795569343158
+"1580","CHOYP_BRAFLDRAFT_200206.1.1|m.35419","Q96AB6","Protein N-terminal asparagine amidohydrolase (EC 3.5.1.-) (Protein NH2-terminal asparagine amidohydrolase) (PNAA) (Protein NH2-terminal asparagine deamidase) (PNAD) (Protein N-terminal Asn amidase) (Protein N-terminal asparagine amidase) (Protein NTN-amidase)",-3.0896936467371
+"1593","CHOYP_BRAFLDRAFT_89746.1.2|m.29425","Q9R172","Neurogenic locus notch homolog protein 3 (Notch 3) [Cleaved into: Notch 3 extracellular truncation; Notch 3 intracellular domain]",-2.04280378682109
+"1650","CHOYP_LOC100374685.1.1|m.16061","Q5M8Z2","Protein preY, mitochondrial",-2.70951129135145
+"1678","CHOYP_LOC373275.6.7|m.57854","P41386","Tubulin beta chain (Beta-tubulin) (Fragment)",-2.43411499853921
+"1694","CHOYP_MCM5.1.1|m.48534","P55862","DNA replication licensing factor mcm5-A (xMCM5-A) (EC 3.6.4.12) (CDC46 homolog A) (xCDC46-A) (CDC46p) (p92)",-5.55236875772286
+"1721","CHOYP_RFC3.1.1|m.48357","Q8R323","Replication factor C subunit 3 (Activator 1 38 kDa subunit) (A1 38 kDa subunit) (Activator 1 subunit 3) (Replication factor C 38 kDa subunit) (RF-C 38 kDa subunit) (RFC38)",-2.25985100456466
+"1752","CHOYP_VATG.1.2|m.4407","Q25532","V-type proton ATPase subunit G (V-ATPase subunit G) (V-ATPase 13 kDa subunit) (Vacuolar proton pump subunit G)",-2.4594316186373
+"1804","CHOYP_DANA_GF15955.1.1|m.44177","Q66KY3","Protein CutA homolog",-2.25985100456466
+"1839","CHOYP_LOC100369985.1.1|m.35628","A6NNX1","RIIa domain-containing protein 1",2.4594316186373
+"1841","CHOYP_LOC100371248.1.2|m.10238","Q49775","Methionine synthase (EC 2.1.1.13) (5-methyltetrahydrofolate--homocysteine methyltransferase) (Methionine synthase, vitamin-B12 dependent) (MS)",-5.41902258270291
+"1881","CHOYP_LOC576698.1.1|m.32335","Q3V096","Ankyrin repeat domain-containing protein 42",-2.25985100456466
+"1937","CHOYP_SH3KBP1.1.1|m.30545","Q96B97","SH3 domain-containing kinase-binding protein 1 (CD2-binding protein 3) (CD2BP3) (Cbl-interacting protein of 85 kDa) (Human Src family kinase-binding protein 1) (HSB-1)",2.70951129135145
+"1980","CHOYP_BRAFLDRAFT_129885.2.2|m.34895","P34552","Apoptosis-linked gene 2-interacting protein X 1 (Prion-like-(Q/N-rich) domain-bearing protein 58) (Protein YNK1)",5.67887358726757
+"1988","CHOYP_BRAFLDRAFT_276226.2.2|m.64449","Q5R806","Prostaglandin reductase 2 (PRG-2) (EC 1.3.1.48) (15-oxoprostaglandin 13-reductase)",-3.0896936467371
+"1997","CHOYP_BRAFLDRAFT_84838.3.6|m.42355","Q460N5","Poly [ADP-ribose] polymerase 14 (PARP-14) (EC 2.4.2.30) (ADP-ribosyltransferase diphtheria toxin-like 8) (ARTD8) (B aggressive lymphoma protein 2)",-4.20442612236725
+"1999","CHOYP_BRD8.1.1|m.244","Q8R3B7","Bromodomain-containing protein 8",-2.25985100456466
+"2010","CHOYP_CPIPJ_CPIJ004840.1.1|m.3309","Q5EA45","FAD-dependent oxidoreductase domain-containing protein 1 (EC 1.-.-.-)",-2.25985100456466
+"2022","CHOYP_FL2D.1.1|m.62439","Q7SXL7","Pre-mRNA-splicing regulator WTAP (Female-lethal(2)D homolog) (WT1-associated protein) (Wilms tumor 1-associating protein)",-2.25985100456466
+"2053","CHOYP_LOC100370154.1.2|m.27385","Q9CZT8","Ras-related protein Rab-3B",-3.0896936467371
+"2081","CHOYP_LOC100877335.1.1|m.8851","Q15911","Zinc finger homeobox protein 3 (AT motif-binding factor 1) (AT-binding transcription factor 1) (Alpha-fetoprotein enhancer-binding protein) (Zinc finger homeodomain protein 3) (ZFH-3)",-3.0896936467371
+"2105","CHOYP_LOC659398.1.1|m.9611","Q6NXG1","Epithelial splicing regulatory protein 1 (RNA-binding motif protein 35A) (RNA-binding protein 35A)",-2.4594316186373
+"2134","CHOYP_RAS3.1.1|m.15706","Q640R7","Ras-related protein Rap-1b",-2.16992500144231
+"2157","CHOYP_Y0777.3.3|m.60141","Q90369","Anosmin-1 (Kallmann syndrome protein homolog)",-2.12368201637836
+"2218","CHOYP_CO2A1.1.1|m.62996","P02466","Collagen alpha-2(I) chain (Alpha-2 type I collagen)",-2.04280378682109
+"2315","CHOYP_LOC582121.1.1|m.30176","P23034","Aspartate aminotransferase (AspAT) (EC 2.6.1.1) (Transaminase A)",-2.70951129135145
+"2326","CHOYP_LOC724172.1.1|m.24081","Q9W4E2","Neurobeachin (A-kinase anchor protein 550) (AKAP 550) (Protein rugose) (dAKAP550)",2.12368201637836
+"2347","CHOYP_PHUM_PHUM137710.1.1|m.19548","Q5ZJP5","Fibronectin type-III domain-containing protein 3a",2.32192809488736
+"2354","CHOYP_PUS3.1.1|m.9880","Q9BZE2","tRNA pseudouridine(38/39) synthase (EC 5.4.99.45) (tRNA pseudouridine synthase 3) (tRNA pseudouridylate synthase 3) (tRNA-uridine isomerase 3)",-2.25985100456466
+"2366","CHOYP_SRPK2.1.1|m.5002","O70551","SRSF protein kinase 1 (EC 2.7.11.1) (SFRS protein kinase 1) (Serine/arginine-rich protein-specific kinase 1) (SR-protein-specific kinase 1)",-2
+"2395","CHOYP_ANR40.1.1|m.1429","Q5SUE8","Ankyrin repeat domain-containing protein 40",-2.25985100456466
+"2410","CHOYP_BRAFLDRAFT_223429.1.2|m.30136","Q13148","TAR DNA-binding protein 43 (TDP-43)",-3.0896936467371
+"2439","CHOYP_FAT1.4.4|m.63315","Q6V0I7","Protocadherin Fat 4 (hFat4) (Cadherin family member 14) (FAT tumor suppressor homolog 4) (Fat-like cadherin protein FAT-J)",-2.25985100456466
+"2500","CHOYP_LOC100641892.1.1|m.56601","P19623","Spermidine synthase (SPDSY) (EC 2.5.1.16) (Putrescine aminopropyltransferase)",-2.25985100456466
+"2517","CHOYP_LOC580670.6.6|m.40875","B3EWZ6","MAM and LDL-receptor class A domain-containing protein 2 (Skeletal organic matrix MAM and LDL-receptor 2) (SOM MAM and LDL-receptor 2) (Fragment)",-2.25985100456466
+"2539","CHOYP_NEMVEDRAFT_V1G106520.1.1|m.14881","P50532","Structural maintenance of chromosomes protein 4 (SMC protein 4) (SMC-4) (Chromosome assembly protein XCAP-C) (Chromosome-associated protein C)",-2.25985100456466
+"2567","CHOYP_PPWD1.1.1|m.48713","Q29RZ2","Peptidylprolyl isomerase domain and WD repeat-containing protein 1 (EC 5.2.1.8)",2.4594316186373
+"2598","CHOYP_XRN2.1.1|m.13943","Q5ZIP4","5'-3' exoribonuclease 2 (EC 3.1.13.-)",-2.12368201637836
+"2615","CHOYP_BRAFLDRAFT_117631.1.1|m.45793","Q99P25","Translin-associated factor X-interacting protein 1 (Trax-interacting protein 1)",-3.0896936467371
+"2629","CHOYP_BRAFLDRAFT_57258.2.3|m.48328","Q53FA7","Quinone oxidoreductase PIG3 (EC 1.-.-.-) (Tumor protein p53-inducible protein 3) (p53-induced gene 3 protein)",-3.70951129135145
+"2641","CHOYP_CBR-GLY-5.1.1|m.26441","Q95ZJ1","Polypeptide N-acetylgalactosaminyltransferase 5 (pp-GaNTase 5) (EC 2.4.1.41) (Protein-UDP acetylgalactosaminyltransferase 5) (UDP-GalNAc:polypeptide N-acetylgalactosaminyltransferase 5)",2.70951129135145
+"2652","CHOYP_DLL4.1.1|m.40197","D3ZHH1","Delta-like protein 4 (Drosophila Delta homolog 4) (Delta4)",-3.41902258270291
+"2658","CHOYP_FAF2.1.1|m.54271","P30568","Glutathione S-transferase A (GST-A) (EC 2.5.1.18) (GST class-theta)",2.70043971814109
+"2698","CHOYP_LOC100492442.1.1|m.16466","Q08379","Golgin subfamily A member 2 (130 kDa cis-Golgi matrix protein) (GM130) (GM130 autoantigen) (Golgin-95)",-3.70951129135145
+"2827","CHOYP_CA2.1.1|m.27846","Q8UWA5","Carbonic anhydrase 2 (EC 4.2.1.1) (Carbonate dehydratase II) (Carbonic anhydrase II) (CA-II)",-2.4594316186373
+"2832","CHOYP_CEP290.1.1|m.58767","O15078","Centrosomal protein of 290 kDa (Cep290) (Bardet-Biedl syndrome 14 protein) (Cancer/testis antigen 87) (CT87) (Nephrocystin-6) (Tumor antigen se2-2)",2
+"2903","CHOYP_LOC100533537.1.1|m.36","Q921J2","GTP-binding protein Rheb (Ras homolog enriched in brain)",-2.70951129135145
+"2936","CHOYP_LOC579946.7.24|m.39737","P22105","Tenascin-X (TN-X) (Hexabrachion-like protein)",-3.96936229591612
+"2941","CHOYP_LOC654994.1.1|m.39461","Q9VLN1","WD repeat-containing protein 82",-2.25985100456466
+"3004","CHOYP_UBP24.1.1|m.54945","Q9UPU5","Ubiquitin carboxyl-terminal hydrolase 24 (EC 3.4.19.12) (Deubiquitinating enzyme 24) (Ubiquitin thioesterase 24) (Ubiquitin-specific-processing protease 24)",-3.0896936467371
+"3013","CHOYP_AACS.1.1|m.66267","Q28BL6","Acetoacetyl-CoA synthetase (EC 6.2.1.16)",2.25985100456466
+"3054","CHOYP_BRAFLDRAFT_76176.1.1|m.55550","Q8NE28","Serine/threonine kinase-like domain-containing protein STKLD1 (Serine/threonine kinase-like domain-containing protein 1) (Sugen kinase 071)",2
+"3102","CHOYP_LOC100117365.1.1|m.37817","Q5RA42","Eukaryotic translation initiation factor 1A, X-chromosomal (eIF-1A X isoform) (Eukaryotic translation initiation factor 4C) (eIF-4C)",2
+"3103","CHOYP_LOC100119577.1.1|m.47861","Q60676","Serine/threonine-protein phosphatase 5 (PP5) (EC 3.1.3.16) (Protein phosphatase T) (PPT)",2
+"3110","CHOYP_LOC100368661.1.1|m.60830","Q5F464","Lipoma-preferred partner homolog",-3.41902258270291
+"3117","CHOYP_LOC100374703.1.1|m.28348","Q8IV36","Protein HID1 (Down-regulated in multiple cancers 1) (HID1 domain-containing protein) (Protein hid-1 homolog)",-2.70951129135145
+"3126","CHOYP_LOC100533384.5.5|m.59083","Q5RA42","Eukaryotic translation initiation factor 1A, X-chromosomal (eIF-1A X isoform) (Eukaryotic translation initiation factor 4C) (eIF-4C)",2
+"3130","CHOYP_LOC100642349.1.1|m.53035","Q6DKB0","Cytosolic purine 5'-nucleotidase (EC 3.1.3.5) (Cytosolic 5'-nucleotidase II)",-2.32192809488736
+"3167","CHOYP_MMS19.1.1|m.18650","Q0V9L1","MMS19 nucleotide excision repair protein homolog (MMS19-like protein)",-3.41902258270291
+"3248","CHOYP_BRAFLDRAFT_226506.1.3|m.1062","Q5H8C4","Vacuolar protein sorting-associated protein 13A (Chorea-acanthocytosis protein homolog) (Chorein)",-2.18265833864414
+"3331","CHOYP_LOC100377243.1.1|m.6500","Q8T880","Axonemal 84 kDa protein (Ci-AXP83.9) (p83.9)",3.0896936467371
+"3416","CHOYP_BRAFLDRAFT_108792.4.5|m.45892","P0C6F1","Dynein heavy chain 2, axonemal (Axonemal beta dynein heavy chain 2) (Ciliary dynein heavy chain 2)",-3.0896936467371
+"3442","CHOYP_CDK13.1.1|m.59965","Q9NYV4","Cyclin-dependent kinase 12 (EC 2.7.11.22) (EC 2.7.11.23) (Cdc2-related kinase, arginine/serine-rich) (CrkRS) (Cell division cycle 2-related protein kinase 7) (CDC2-related protein kinase 7) (Cell division protein kinase 12) (hCDK12)",-3.41902258270291
+"3472","CHOYP_GNAQ.1.1|m.20698","O15975","Guanine nucleotide-binding protein G(q) subunit alpha (Guanine nucleotide-binding protein alpha-q)",-3.0896936467371
+"3483","CHOYP_ISCW_ISCW017350.1.1|m.11950","Q24537","High mobility group protein DSP1 (Protein dorsal switch 1)",-2.26941239209809
+"3484","CHOYP_ISCW_ISCW023180.1.2|m.31255","Q8WXF0","Serine/arginine-rich splicing factor 12 (35 kDa SR repressor protein) (SRrp35) (Splicing factor, arginine/serine-rich 13B) (Splicing factor, arginine/serine-rich 19)",-3.0896936467371
+"3496","CHOYP_LOC100366482.1.1|m.9777","Q8T773","Putative malate dehydrogenase 1B (EC 1.1.1.-)",-2.25985100456466
+"3505","CHOYP_LOC100373522.5.5|m.54028","Q95230","Sperm surface protein Sp17 (Sperm autoantigenic protein 17)",-2.01612652020021
+"3537","CHOYP_LOC413005.1.1|m.63172","Q6AYR2","Protein NDRG3 (N-myc downstream-regulated gene 3 protein)",-2
+"3549","CHOYP_LOC659702.1.1|m.7231","P56377","AP-1 complex subunit sigma-2 (Adaptor protein complex AP-1 subunit sigma-1B) (Adaptor-related protein complex 1 subunit sigma-1B) (Clathrin assembly protein complex 1 sigma-1B small chain) (Golgi adaptor HA1/AP1 adaptin sigma-1B subunit) (Sigma 1B subunit of AP-1 clathrin) (Sigma-adaptin 1B) (Sigma1B-adaptin)",-2.25985100456466
+"3563","CHOYP_NEMVEDRAFT_V1G194582.1.2|m.11442","Q8WPW2","Pyridoxal 5'-phosphate synthase subunit SNZERR (PLP synthase subunit SNZERR) (EC 4.3.3.6) (Ethylene response protein) (PDX1)",-2.25985100456466
+"3573","CHOYP_PHUM_PHUM454570.1.1|m.28665","Q3UHU5","Microtubule cross-linking factor 1 (Coiled-coil domain-containing protein 165) (PAR-1-interacting protein) (SOGA family member 2)",-2
+"3597","CHOYP_UBC12.1.1|m.51806","Q6P8D9","NEDD8-conjugating enzyme Ubc12 (EC 6.3.2.-) (NEDD8 carrier protein) (NEDD8 protein ligase) (Ubiquitin-conjugating enzyme E2 M)",-2.70951129135145
+"3640","CHOYP_BRAFLDRAFT_270672.1.1|m.25768","Q9Y617","Phosphoserine aminotransferase (EC 2.6.1.52) (Phosphohydroxythreonine aminotransferase) (PSAT)",-2.04280378682109
+"3642","CHOYP_BRAFLDRAFT_276474.1.1|m.6793","A1L259","2-oxo-4-hydroxy-4-carboxy-5-ureidoimidazoline decarboxylase (OHCU decarboxylase) (EC 4.1.1.97) (Parahox neighbor) (Ureidoimidazoline (2-oxo-4-hydroxy-4-carboxy-5-) decarboxylase)",-2.25985100456466
+"3651","CHOYP_BRAFLDRAFT_88219.1.5|m.37187","O70277","Tripartite motif-containing protein 3 (Brain-expressed RING finger protein) (RING finger protein 22)",-2.25985100456466
+"3660","CHOYP_CO1A1.1.1|m.32133","P39059","Collagen alpha-1(XV) chain [Cleaved into: Restin (Endostatin-XV) (Related to endostatin) (Restin-I); Restin-2 (Restin-II); Restin-3 (Restin-III); Restin-4 (Restin-IV)]",-3.70951129135145
+"3668","CHOYP_DMBT1.15.34|m.29008","B3EWZ5","MAM and LDL-receptor class A domain-containing protein 1 (Skeletal organic matrix MAM and LDL-receptor 1) (SOM MAM and LDL-receptor 1) (Fragment)",-3.41902258270291
+"3673","CHOYP_EPS-8.1.1|m.17522","Q08509","Epidermal growth factor receptor kinase substrate 8",-2.75647079736603
+"3770","CHOYP_NEMVEDRAFT_V1G235461.1.1|m.28341","Q8MP06","Senecionine N-oxygenase (SNO) (EC 1.14.13.101)",-4.20442612236725
+"3803","CHOYP_SC22B.1.1|m.62900","Q6P7L4","Vesicle-trafficking protein SEC22b (SEC22 vesicle-trafficking protein homolog B) (SEC22-like protein 1)",-3.41902258270291
+"3817","CHOYP_THOC2.2.2|m.19049","B3EWZ5","MAM and LDL-receptor class A domain-containing protein 1 (Skeletal organic matrix MAM and LDL-receptor 1) (SOM MAM and LDL-receptor 1) (Fragment)",2.25985100456466
+"3878","CHOYP_CEP63.2.2|m.35716","Q86X83","COMM domain-containing protein 2",-3.41902258270291
+"3895","CHOYP_DNAH12.3.3|m.63246","Q63164","Dynein heavy chain 1, axonemal (Axonemal beta dynein heavy chain 1) (Ciliary dynein heavy chain 1)",2.32192809488736
+"3966","CHOYP_LOC412116.1.1|m.42829","Q8BHN5","RNA-binding protein 45 (Developmentally-regulated RNA-binding protein 1) (RB-1) (RNA-binding motif protein 45)",-2.04921410567492
+"3970","CHOYP_LOC577184.1.1|m.62005","B3EWY9","Mucin-like protein (Fragment)",-2.70951129135145
+"4033","CHOYP_SRAP.16.18|m.58654","Q8K561","Otoancorin",-3.16992500144231
+"4062","CHOYP_BRAFLDRAFT_108193.2.2|m.37878","Q86VX2","COMM domain-containing protein 7",2.25985100456466
+"4114","CHOYP_H3.1.2|m.3829","P06353","Histone H3.3 (Fragment)",-2.04280378682109
+"4127","CHOYP_ISCW_ISCW017707.1.1|m.58329","Q9Y2H1","Serine/threonine-protein kinase 38-like (EC 2.7.11.1) (NDR2 protein kinase) (Nuclear Dbf2-related kinase 2)",2
+"4144","CHOYP_LOC100371248.2.2|m.48460","Q9H2M3","S-methylmethionine--homocysteine S-methyltransferase BHMT2 (SMM-hcy methyltransferase) (EC 2.1.1.10) (Betaine--homocysteine S-methyltransferase 2)",-3.41902258270291
+"4147","CHOYP_LOC100372505.1.2|m.10260","Q5FWT1","Protein FAM98A",2.16992500144231
+"4148","CHOYP_LOC100373429.1.1|m.10007","F1P4W9","Cilia- and flagella-associated protein 65 (Coiled-coil domain-containing protein 108)",-4.20442612236725
+"4150","CHOYP_LOC100374754.1.1|m.32299","Q8R0G9","Nuclear pore complex protein Nup133 (133 kDa nucleoporin) (Nucleoporin Nup133)",-2.4594316186373
+"4168","CHOYP_LOC100705966.1.1|m.45957","P02504","Alpha-crystallin A chain",2.19897784671579
+"4172","CHOYP_LOC100883123.1.1|m.704","P62501","TSC22 domain family protein 1 (Regulatory protein TSC-22) (TGFB-stimulated clone 22 homolog) (Transforming growth factor beta-1-induced transcript 4 protein)",-2.25985100456466
+"4209","CHOYP_PHUM_PHUM494500.1.1|m.9430","Q09024","Neural/ectodermal development factor IMP-L2",2.70951129135145
+"4213","CHOYP_RB3GP.1.2|m.53902","Q642R9","Rab3 GTPase-activating protein catalytic subunit",2.70951129135145
+"4224","CHOYP_SMP_149390.1.1|m.8819","Q8C419","Probable G-protein coupled receptor 158",2.25985100456466
+"4228","CHOYP_SYWC.3.5|m.26200","Q8TUA1","Tryptophan--tRNA ligase (EC 6.1.1.2) (Tryptophanyl-tRNA synthetase) (TrpRS)",2.25985100456466
+"4247","CHOYP_1433G.2.2|m.63451","Q4R979","RNA-binding protein 4 (RNA-binding motif protein 4)",-2
+"4253","CHOYP_ACT5.3.3|m.41147","Q9P7X7","Actin-related protein 4 (Actin-like protein arp4) (Actin-like protein 4) (Altered polarity protein 5)",-3
+"4266","CHOYP_BRAFLDRAFT_116088.2.2|m.27531","Q9H0A8","COMM domain-containing protein 4",-3.0896936467371
+"4305","CHOYP_CRYM.1.1|m.8544","O54983","Ketimine reductase mu-crystallin (EC 1.5.1.25) (NADP-regulated thyroid-hormone-binding protein)",2.25985100456466
+"4327","CHOYP_HYI.1.1|m.10528","Q7T3H9","Putative hydroxypyruvate isomerase (EC 5.3.1.22)",-2.32192809488736
+"4365","CHOYP_LOC100378618.1.1|m.48704","Q6ZU80","Centrosomal protein of 128 kDa (Cep128)",-2.25985100456466
+"4381","CHOYP_LOC100889564.1.1|m.17149","Q6DF46","Ubiquinone biosynthesis monooxygenase COQ6, mitochondrial (EC 1.14.13.-) (Coenzyme Q10 monooxygenase 6)",-3.0896936467371
+"4395","CHOYP_LOC580670.5.6|m.34028","P98072","Enteropeptidase (EC 3.4.21.9) (Enterokinase) (Serine protease 7) (Transmembrane protease serine 15) [Cleaved into: Enteropeptidase non-catalytic heavy chain; Enteropeptidase catalytic light chain]",2.25985100456466
+"4426","CHOYP_PHUM_PHUM241330.1.3|m.29132","Q4R979","RNA-binding protein 4 (RNA-binding motif protein 4)",-2
+"4435","CHOYP_RABGAP1.1.1|m.50532","A2AWA9","Rab GTPase-activating protein 1 (GAP and centrosome-associated protein) (Rab6 GTPase-activating protein GAPCenA)",2.25985100456466
+"4452","CHOYP_SNUT2.1.1|m.19264","Q3TIX9","U4/U6.U5 tri-snRNP-associated protein 2 (Inactive ubiquitin-specific peptidase 39)",-2.70951129135145
+"4500","CHOYP_BRAFLDRAFT_206907.5.11|m.19273","Q9Y383","Putative RNA-binding protein Luc7-like 2",-2.25985100456466
+"4502","CHOYP_BRAFLDRAFT_215789.1.1|m.60405","Q9H0Z9","RNA-binding protein 38 (CLL-associated antigen KW-5) (HSRNASEB) (RNA-binding motif protein 38) (RNA-binding region-containing protein 1) (ssDNA-binding protein SEB4)",-2.25985100456466
+"4526","CHOYP_CWC22.1.1|m.29270","Q52KN9","Pre-mRNA-splicing factor CWC22 homolog (Nucampholin homolog)",-2.25985100456466
+"4528","CHOYP_DDX1.1.1|m.46908","Q90WU3","ATP-dependent RNA helicase DDX1 (EC 3.6.4.13) (DEAD box protein 1)",-2.16992500144231
+"4550","CHOYP_KAT3.1.1|m.49207","Q6YP21","Kynurenine--oxoglutarate transaminase 3 (EC 2.6.1.7) (Cysteine-S-conjugate beta-lyase 2) (EC 4.4.1.13) (Kynurenine aminotransferase 3) (Kynurenine aminotransferase III) (KATIII) (Kynurenine--glyoxylate transaminase) (EC 2.6.1.63) (Kynurenine--oxoglutarate transaminase III)",-2
+"4566","CHOYP_LOC100367949.3.3|m.63228","Q9BXJ4","Complement C1q tumor necrosis factor-related protein 3 (Collagenous repeat-containing sequence 26 kDa protein) (CORS26) (Secretory protein CORS26)",-2.25985100456466
+"4605","CHOYP_LOC100703289.1.1|m.53585","Q8CF97","Deubiquitinating protein VCIP135 (EC 3.4.19.12) (Valosin-containing protein p97/p47 complex-interacting protein 1) (Valosin-containing protein p97/p47 complex-interacting protein p135)",-3.41902258270291
+"4611","CHOYP_LOC100882621.1.2|m.25860","Q8IRG6","FACT complex subunit spt16 (Facilitates chromatin transcription complex subunit SPT16) (dSPT16)",-2.25985100456466
+"4625","CHOYP_LOC593741.1.1|m.11514","Q567I9","Cytochrome b5 domain-containing protein 1",-2.16992500144231
+"4635","CHOYP_MECR.1.1|m.6989","Q6GQN8","Trans-2-enoyl-CoA reductase, mitochondrial (EC 1.3.1.38)",-2.16992500144231
+"4683","CHOYP_AGAP_AGAP005057.1.1|m.62428","Q60ZR7","Resistance to inhibitors of cholinesterase protein 3",2.70951129135145
+"4713","CHOYP_CDPKM.1.1|m.58179","P23286","Calmodulin (CaM)",-2.70043971814109
+"4734","CHOYP_GAK.1.1|m.7017","O14976","Cyclin-G-associated kinase (EC 2.7.11.1)",-4.20442612236725
+"4863","CHOYP_TACC1.2.2|m.53512","Q6Y685","Transforming acidic coiled-coil-containing protein 1",2
+"4869","CHOYP_TOP2B.1.1|m.6674","Q64511","DNA topoisomerase 2-beta (EC 5.99.1.3) (DNA topoisomerase II, beta isozyme)",-2.4594316186373
+"4877","CHOYP_VOLCADRAFT_93060.1.2|m.3949","O96790","Serine protease inhibitor dipetalogastin (Dipetalin) (Fragment)",-2.70951129135145
+"4881","CHOYP_YMS5.1.1|m.5494","P34501","Uncharacterized protein K03H1.5",-2.58496250072116
+"4974","CHOYP_LOC100121687.1.1|m.57141","Q14202","Zinc finger MYM-type protein 3 (Zinc finger protein 261)",-2.4594316186373
+"5044","CHOYP_LOC659512.4.4|m.31246","Q5R941","Peptidyl-prolyl cis-trans isomerase FKBP14 (PPIase FKBP14) (EC 5.2.1.8) (FK506-binding protein 14) (FKBP-14) (Rotamase)",-3.41902258270291
+"5046","CHOYP_LOC663375.1.1|m.11969","Q80W03","TOX high mobility group box family member 3 (Trinucleotide repeat-containing gene 9 protein)",-2
+"5123","CHOYP_BRAFLDRAFT_88506.1.1|m.64174","Q3SX22","BSD domain-containing protein 1",-2.25985100456466
+"5128","CHOYP_CAN5.1.1|m.42243","P80404","4-aminobutyrate aminotransferase, mitochondrial (EC 2.6.1.19) ((S)-3-amino-2-methylpropionate transaminase) (EC 2.6.1.22) (GABA aminotransferase) (GABA-AT) (Gamma-amino-N-butyrate transaminase) (GABA transaminase) (GABA-T) (L-AIBAT)",-4.41902258270291
+"5166","CHOYP_LOC100115776.1.1|m.24729","Q921I2","Kelch domain-containing protein 4",-2.70951129135145
+"5184","CHOYP_LOC100370913.1.1|m.19909","O15084","Serine/threonine-protein phosphatase 6 regulatory ankyrin repeat subunit A (PP6-ARS-A) (Serine/threonine-protein phosphatase 6 regulatory subunit ARS-A) (Ankyrin repeat domain-containing protein 28) (Phosphatase interactor targeting protein hnRNP K) (PITK)",-2.04743388970235
+"5201","CHOYP_LOC100638860.2.2|m.44785","O28987","Uncharacterized protein AF_1281",2.32192809488736
+"5265","CHOYP_PYRG1.1.1|m.13552","Q6PEI7","CTP synthase 1 (EC 6.3.4.2) (CTP synthetase 1) (UTP--ammonia ligase 1)",2
+"5266","CHOYP_R3HDM1.1.1|m.36018","Q15032","R3H domain-containing protein 1",-2.25985100456466
+"5280","CHOYP_SAHH3.2.2|m.51221","A3PFB5","Adenosylhomocysteinase (EC 3.3.1.1) (S-adenosyl-L-homocysteine hydrolase) (AdoHcyase)",-2.55172858507268
+"5361","CHOYP_CIAO1.1.1|m.48324","A7RWD2","Probable cytosolic iron-sulfur protein assembly protein CIAO1 homolog",-4.20442612236725
+"5367","CHOYP_CSTF3.1.1|m.10636","Q12996","Cleavage stimulation factor subunit 3 (CF-1 77 kDa subunit) (Cleavage stimulation factor 77 kDa subunit) (CSTF 77 kDa subunit) (CstF-77)",-3.0896936467371
+"5396","CHOYP_LOC100181355.1.1|m.48652","Q9BXF9","Tektin-3",-2.70043971814109
+"5443","CHOYP_LOC566887.1.1|m.45765","Q5SZD4","Glycine N-acyltransferase-like protein 3 (EC 2.3.1.-)",-2.25985100456466
+"5460","CHOYP_MCEE.1.1|m.62224","Q96PE7","Methylmalonyl-CoA epimerase, mitochondrial (EC 5.1.99.1) (DL-methylmalonyl-CoA racemase)",-2.25985100456466
+"5461","CHOYP_MEST.2.2|m.55065","Q6GQN0","Centrosomal protein of 41 kDa (Cep41) (Testis-specific gene A14 protein)",-2
+"5469","CHOYP_NASP.2.4|m.13404","Q02508","Protein HGV2",-2.52371901428583
+"5545","CHOYP_CBLN3.1.2|m.29253","Q2KIX7","Protein HP-25 homolog 1",-4.61643218977614
+"5580","CHOYP_ISCW_ISCW013378.2.3|m.11858","Q8CJG0","Protein argonaute-2 (Argonaute2) (mAgo2) (EC 3.1.26.n2) (Argonaute RISC catalytic component 2) (Eukaryotic translation initiation factor 2C 2) (eIF-2C 2) (eIF2C 2) (Piwi/argonaute family protein meIF2C2) (Protein slicer)",-2
+"5581","CHOYP_ISCW_ISCW014481.1.1|m.61217","P56524","Histone deacetylase 4 (HD4) (EC 3.5.1.98)",-2
+"5613","CHOYP_LOC100640618.1.1|m.4378","Q5U3U0","Phytanoyl-CoA dioxygenase domain-containing protein 1 (EC 1.-.-.-)",2.25985100456466
+"5644","CHOYP_NMT2.1.2|m.10421","O60551","Glycylpeptide N-tetradecanoyltransferase 2 (EC 2.3.1.97) (Myristoyl-CoA:protein N-myristoyltransferase 2) (NMT 2) (Peptide N-myristoyltransferase 2) (Type II N-myristoyltransferase)",-2.13460065205976
+"5654","CHOYP_PPIE.1.1|m.18580","Q5R723","Peptidyl-prolyl cis-trans isomerase E (PPIase E) (EC 5.2.1.8) (Cyclophilin E) (Rotamase E)",-2
+"5674","CHOYP_UBA3.1.1|m.59856","Q8C878","NEDD8-activating enzyme E1 catalytic subunit (EC 6.3.2.-) (NEDD8-activating enzyme E1C) (Ubiquitin-activating enzyme E1C) (Ubiquitin-like modifier-activating enzyme 3) (Ubiquitin-activating enzyme 3)",-2.25985100456466
+"5681","CHOYP_ABCE1.2.2|m.42246","P61222","ATP-binding cassette sub-family E member 1 (RNase L inhibitor) (Ribonuclease 4 inhibitor) (RNS4I)",-2.70043971814109
+"5750","CHOYP_KDEL1.1.1|m.62729","Q6UW63","KDEL motif-containing protein 1 (Endoplasmic reticulum resident protein 58) (ER protein 58) (ERp58)",-2
+"5781","CHOYP_LOC100567407.1.1|m.8503","Q5RB75","NudC domain-containing protein 3",-2.25985100456466
+"5832","CHOYP_PCP.1.1|m.59309","Q2TA14","Lysosomal Pro-X carboxypeptidase (EC 3.4.16.2) (Proline carboxypeptidase) (Prolylcarboxypeptidase) (PRCP)",-4.20442612236725
+"5863","CHOYP_THERJR_2510.1.1|m.38407","Q4R4Z9","Acyl-CoA synthetase family member 2, mitochondrial (EC 6.2.1.-)",-3.0896936467371
+"5907","CHOYP_BRAFLDRAFT_275667.1.1|m.17353","Q9P2H3","Intraflagellar transport protein 80 homolog (WD repeat-containing protein 56)",-2.25985100456466
+"5932","CHOYP_DPF2.1.2|m.6678","Q61103","Zinc finger protein ubi-d4 (Apoptosis response zinc finger protein) (BRG1-associated factor 45D) (BAF45D) (D4, zinc and double PHD fingers family 2) (Protein requiem)",-2.25985100456466
+"5966","CHOYP_LOC100169460.1.1|m.41302","Q9UJZ1","Stomatin-like protein 2, mitochondrial (SLP-2) (EPB72-like protein 2) (Paraprotein target 7) (Paratarg-7)",-2
+"5969","CHOYP_LOC100186733.1.1|m.7066","Q5XIA9","Kelch domain-containing protein 8B",-2.12368201637836
+"5976","CHOYP_LOC100367460.1.1|m.62925","Q8YTC2","Uncharacterized WD repeat-containing protein alr2800",-4.79920493808856
+"5991","CHOYP_LOC100372881.1.1|m.4636","Q29RK9","MOB kinase activator 3B (Mob1 homolog 2b) (Mps one binder kinase activator-like 2B)",-3.41902258270291
+"6021","CHOYP_LOC100878391.1.1|m.28644","O35094","Mitochondrial import inner membrane translocase subunit TIM44",-2.16992500144231
+"6066","CHOYP_NSUN2.1.1|m.14138","Q08J23","tRNA (cytosine(34)-C(5))-methyltransferase (EC 2.1.1.203) (Myc-induced SUN domain-containing protein) (Misu) (NOL1/NOP2/Sun domain family member 2) (Substrate of AIM1/Aurora kinase B) (tRNA (cytosine-5-)-methyltransferase) (tRNA methyltransferase 4 homolog) (hTrm4)",-2.4594316186373
+"6090","CHOYP_SSPO.11.14|m.53093","Q06852","Cell surface glycoprotein 1 (Outer layer protein B) (S-layer protein 1)",-2.8073549220576
+"6121","CHOYP_BRAFLDRAFT_113596.1.1|m.53557","A4IGP0","Protein Hikeshi",-2.25985100456466
+"6134","CHOYP_BRAFLDRAFT_128460.1.2|m.7232","Q7Z4L5","Tetratricopeptide repeat protein 21B (TPR repeat protein 21B) (Intraflagellar transport 139 homolog)",-2.70951129135145
+"6214","CHOYP_LOC100374249.1.1|m.58296","Q4G0X9","Coiled-coil domain-containing protein 40",-4.20442612236725
+"6263","CHOYP_MP2K4.1.1|m.10635","P47809","Dual specificity mitogen-activated protein kinase kinase 4 (MAP kinase kinase 4) (MAPKK 4) (EC 2.7.12.2) (C-JUN N-terminal kinase kinase 1) (JNK kinase 1) (JNKK 1) (JNK-activating kinase 1) (MAPK/ERK kinase 4) (MEK 4) (SAPK/ERK kinase 1) (SEK1)",-2.25985100456466
+"6283","CHOYP_PRPF4.1.1|m.62194","O43172","U4/U6 small nuclear ribonucleoprotein Prp4 (PRP4 homolog) (hPrp4) (U4/U6 snRNP 60 kDa protein) (WD splicing factor Prp4)",-2.16992500144231
+"6312","CHOYP_WDR12.1.1|m.13380","B7PY76","Ribosome biogenesis protein WDR12 homolog",-2
+"6325","CHOYP_BDH2.2.2|m.57286","Q48230","Bifunctional ribulose 5-phosphate reductase/CDP-ribitol pyrophosphorylase Bcs1 (CDP-ribitol synthase) [Includes: Ribitol-5-phosphate cytidylyltransferase (EC 2.7.7.40); Ribulose-5-phosphate reductase (Ribulose-5-P reductase) (EC 1.1.1.137) (Ribitol-5-phosphate dehydrogenase)]",-2.16992500144231
+"6409","CHOYP_LOC100378844.1.4|m.7322","B5X5D0","UPF0691 protein C9orf116 homolog",-2.16992500144231
+"6418","CHOYP_LOC100567969.1.1|m.26460","P36876","Serine/threonine-protein phosphatase 2A 55 kDa regulatory subunit B alpha isoform (PP2A subunit B isoform B55-alpha) (PP2A subunit B isoform BRA) (PP2A subunit B isoform PR55-alpha) (PP2A subunit B isoform R2-alpha) (PP2A subunit B isoform alpha)",2
+"6421","CHOYP_LOC100635694.1.1|m.24761","P55008","Allograft inflammatory factor 1 (AIF-1) (Ionized calcium-binding adapter molecule 1) (Protein G1)",-2.25985100456466
+"6516","CHOYP_contig_024742|m.28122","None","None",-2.32192809488736
+"6584","CHOYP_LOC100373351.1.3|m.49572","None","None",-3.70951129135145
+"6785","CHOYP_TBA1.2.9|m.9962","None","None",-2.21317902266045
+"6820","CHOYP_OCDH.1.1|m.1284","None","None",-4.41902258270291
+"6891","CHOYP_MYCBP2.1.1|m.27070","None","None",-2.70951129135145
+"6927","CHOYP_FABP6.2.2|m.59518","None","None",2.58496250072116
+"6978","CHOYP_contig_026949|m.30663","None","None",-3.0896936467371
+"7031","CHOYP_contig_003882|m.4416","None","None",-2.16992500144231
+"7255","CHOYP_ZN330.1.2|m.7843","None","None",-2.70951129135145
+"7273","CHOYP_contig_025167|m.28650","None","None",3.41902258270291
+"7275","CHOYP_FUCO.1.2|m.58756","None","None",-2.58496250072116
+"7277","CHOYP_contig_004594|m.5279","None","None",-3.0896936467371
+"7303","CHOYP_KCP.3.13|m.17018","None","None",2.16992500144231
+"7314","CHOYP_AGRIN.3.5|m.5652","None","None",-3.0896936467371
+"7361","CHOYP_contig_014479|m.16604","None","None",2.25985100456466
+"7405","CHOYP_CASP10.5.7|m.49889","None","None",2.70951129135145
+"7430","CHOYP_contig_024357|m.27696","None","None",-2.25985100456466
+"7439","CHOYP_LOC100378969.2.2|m.31240","None","None",-3.0896936467371
+"7455","CHOYP_LOC100485247.1.1|m.37690","None","None",2.25985100456466
+"7511","CHOYP_CAOG_04643.2.2|m.50992","None","None",-2.25985100456466
+"7598","CHOYP_SMP_051990.1.7|m.327","None","None",-3.0896936467371
+"7614","CHOYP_contig_016405|m.19312","None","None",-4.41902258270291
+"7621","CHOYP_contig_033356|m.38032","None","None",2.25985100456466
+"7688","CHOYP_DMBT1.3.34|m.3602","None","None",2.25985100456466
+"7728","CHOYP_LOC100899732.1.1|m.26595","None","None",-2.16992500144231
+"7798","CHOYP_LTOR2.2.2|m.61709","None","None",-2.25985100456466
+"7836","CHOYP_contig_031485|m.35969","None","None",-2.25985100456466
+"7897","CHOYP_contig_017060|m.20058","None","None",-2.70951129135145
+"7960","CHOYP_BRAFLDRAFT_127065.5.7|m.28848","None","None",2.8073549220576
+"7967","CHOYP_contig_023673|m.26924","None","None",-2.70951129135145
+"7971","CHOYP_CASP7.9.23|m.25523","None","None",2.70951129135145
+"8000","CHOYP_LOC101067281.1.2|m.14666","None","None",-2
+"8012","CHOYP_HN1L.2.2|m.9837","None","None",-2.2990172878644
+"8123","CHOYP_contig_055102|m.65741","None","None",-3.0896936467371
+"8141","CHOYP_PCKG.2.2|m.50139","None","None",-3.70951129135145
+"8183","CHOYP_contig_010639|m.12333","None","None",-2.25985100456466
+"8193","CHOYP_contig_023752|m.27015","None","None",-3.70951129135145
+"8257","CHOYP_LOC660225.1.1|m.35197","None","None",-3.70951129135145
+"8293","CHOYP_RS4.11.11|m.63584","None","None",-2.70951129135145
+"8311","CHOYP_PDE6D.1.2|m.6439","None","None",-2.25985100456466
+"8353","CHOYP_GBB.2.2|m.35274","None","None",-3.41902258270291
