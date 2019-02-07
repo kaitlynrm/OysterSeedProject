@@ -5,24 +5,33 @@
 #Option 2: Filtered NSAF values
 #Optional: remove day 0 and day 15
 
-#####################################  OPTION 1: All NSAF values and detected proteins  #################################################################################
+#####################################  OPTION 1: Averaged replicate values  #################################################################################
 
-NSAF.avg <- read.csv("Documents/robertslab/labnotebook/data/NSAF/")
+NSAF.avg <- read.csv("Documents/robertslab/labnotebook/data/NSAF/silo3and9_nozerovals_AVGs.csv")
+rownames(NSAF.avg) <- paste("D",NSAF.avg$day, "T", NSAF.avg$temp, sep = "")
+NSAF.avg <- t(NSAF.avg)
+
+#Remove contaminant proteins
+NSAF.avg <- subset(NSAF.avg, grepl(paste('CHOYP', collapse="|"), rownames(NSAF.avg)))
+which(grepl('ALBU_BOVIN', rownames(NSAF.avg))) #ensure contaminants are gone
+
+#dataframe
+NSAF.trans <- data.frame(NSAF.avg)
 
 ##############################################################################################################################
 
-#####################################  OPTION 2: Filtered NSAF values  #################################################################################
+#####################################  OPTION 2: Averaged and filtered values  #################################################################################
 
-NSAF.filtered <- read.csv("Documents/robertslab/labnotebook/data/NSAF/silo3and9_nozerovals_AVGs.csv")
-rownames(NSAF.filtered) <- paste(NSAF.filtered$day, NSAF.filtered$temp, sep="_")
-NSAF.filtered <- NSAF.filtered[,-c(1:3)]
+NSAF.fil <- read.csv("Documents/robertslab/labnotebook/data/NSAF/silo3and9_nozerovals_noincnstprot.csv")
+rownames(NSAF.fil) <- paste("D",NSAF.fil$day, "T", NSAF.fil$temp, sep = "")
+NSAF.fil <- t(NSAF.fil)
 
-NSAF.trans <- data.frame(t(NSAF.filtered))
+#Remove contaminant proteins
+NSAF.fil <- subset(NSAF.fil, grepl(paste('CHOYP', collapse="|"), rownames(NSAF.fil)))
+which(grepl('ALBU_BOVIN', rownames(NSAF.fil))) #ensure contaminants are gone
 
-#remove contaminant proteins
-NSAF.trans <- subset(NSAF.trans, grepl(paste('CHOYP', collapse="|"), rownames(NSAF.trans)))
-which(grepl('ALBU_BOVIN', rownames(NSAF.trans))) #ensure contaminants are gone
-NSAF.trans <- NSAF.trans[,-c(1)]
+#Because the rest of the code was set for NSAF.trans not NSAF.avg
+NSAF.trans <- data.frame(NSAF.fil)
 
 #####################################  For genes as names  ####################################################################
 
@@ -44,37 +53,48 @@ s3 <- merge[,c(15,2,4,6,8,10,12)]
 s9 <- merge[,c(15,3,5,7,9,11,13)]
 #########################################  For Proteins as names  ################################################################
 
-#seperate silos (for NSAF.trans file)
 NSAF.trans$Names <- rownames(NSAF.trans)
-silo3 <- NSAF.trans[,c(13,1,3,5,7,9,11)]
-silo9 <- NSAF.trans[,c(13,2,4,6,8,10,12)]
+rownames(NSAF.trans) <- NULL
+
+#seperate silos
+silo3 <- NSAF.trans[, c(grepl("23", colnames(NSAF.trans)))]
+silo3$Names <- NSAF.trans$Names
+
+silo9 <- NSAF.trans[, c(grepl("29", colnames(NSAF.trans)))]
+silo9$Names <- NSAF.trans$Names
 
 ####################################################################################
 #add silo/temp prefix into protein/gene names
 silo3$Names <- sub("^", "3_", silo3$Names)
 silo9$Names <- sub("^", "9_", silo9$Names)
 
-colnames(silo3) <- c("ID", "D3", "D5", "D7", "D9", "D11", "D13")
-colnames(silo9) <- c("ID", "D3", "D5", "D7", "D9", "D11", "D13")
+#Make column names time only
+colnames(silo3) <- sub("T.*", "", colnames(silo3))
+colnames(silo9) <- sub("T.*", "", colnames(silo9))
 
 #combine dataframes
 silo3.9 <- rbind(silo3,silo9)
 
 # do below lines if genes are names
-rownames(silo3.9) <-  make.names(silo3.9$ID, unique=TRUE)
-rownames(silo3.9) <- sub("X", "", rownames(silo3.9))
+#rownames(silo3.9) <-  make.names(silo3.9$ID, unique=TRUE)
+#rownames(silo3.9) <- sub("X", "", rownames(silo3.9))
 
 #do below if proteins are names
-rownames(silo3.9) <- silo3.9$ID
+rownames(silo3.9) <- silo3.9$Names
+silo3.9 <- silo3.9[,-c(7)]
 
-silo3.9 <- silo3.9[,-c(1)]
+#add in day 0 
+silo3.9$D0 <- NSAF.trans$D0T16
+
+library(dplyr)
+silo3.9 <- silo3.9 %>% select("D0", everything())
 
 #biostats package
-source("Documents/robertslab/labnotebook/analysis/clustering/biostats.R")
+source("Documents/robertslab/labnotebook/analysis/scripts/biostats.R")
 
 ##############################################################################################################################
 
-#Data is loaded in as silo3_9 with proteins as row names and biostats is loaded
+#Data is loaded in as silo3.9 with proteins as row names and biostats is loaded
 #Now start cluster analysis!
 
 #dissimilarity matrix and clustering
@@ -85,13 +105,13 @@ library(cluster)
 clust.avg<-hclust(nsaf.euc, method='average')
 
 #agglomerate coefficent
-coef.hclust(clust.avg) # euclidean = 0.9991113; bray = 0.9542416; euclidean(avg tech reps) = 0.9975317
+coef.hclust(clust.avg) # euclidean = 0.9991113; bray = 0.9542416; euclidean(avg tech reps) = 0.9969951
 
 #cophenetic correlation (want at least 0.75)
-cor(nsaf.euc, cophenetic(clust.avg)) # euclidean = 0.9635755; bray = 0.7826124; euclidean(avg tech reps) = 0.9635755
+cor(nsaf.euc, cophenetic(clust.avg)) # euclidean = 0.9635755; bray = 0.7826124; euclidean(avg tech reps) = 
 
 #Scree plot
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg-scree-plot.jpeg", width = 1000, height = 1000)
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/scree.jpeg", width = 1000, height = 1000)
 hclus.scree(clust.avg)
 dev.off()
 
@@ -103,19 +123,19 @@ plot(clust.avg)
 rect.hclust(clust.avg, h=250)
 
 
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg-dendrogram.jpeg", width = 1000, height = 1000)
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/dendrogram.jpeg", width = 1000, height = 1000)
 plot(clust.avg)
 rect.hclust(clust.avg, h=250)
 dev.off()
 
 #this looks reasonable
 clust.class<-cutree(clust.avg, h=250)
-max(clust.class) #33 clusters at 50 height; bray = 22 at 0.5; 28 cluster travg
+max(clust.class) #33 clusters at 50 height; bray = 22 at 0.5; 35 cluster travg
 
 #Cluster Freq table
 silo3_9.freq <- data.frame(table(clust.class))
 
-write.csv(silo3_9.freq, file = "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg-s3s9-freq.csv", row.names = FALSE)
+write.csv(silo3_9.freq, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/freq.csv", row.names = FALSE)
 
 #Make df
 silo3_9.clus <- data.frame(clust.class)
@@ -138,7 +158,7 @@ melted_all_s3_9<-melt(silo3_9.all, id.vars=c('ID', 'Cluster'))
 
 silo <- substr(melted_all_s3_9$ID, 0, 1)
 
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg-250-unqabundanceplot.jpeg", width = 1000, height = 1000)
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/lineplot-allprot.jpeg", width = 1000, height = 1000)
 
 ggplot(melted_all_s3_9, aes(x=variable, y=value, group=ID, color=silo)) +geom_line(alpha=0.8) + theme_bw() +
   facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
@@ -159,8 +179,8 @@ silo3_9.edit <- silo3_9.edit %>% select(Silo, everything())
 silo3_9.edit <- silo3_9.edit %>% select(Cluster, everything())
 
 #save datasheet with abundance values, clusters, and annotations
-#silo3_9.annot <- merge(silo3_9.edit, annotations, by.x = "Protein", by.y = "Protein.ID")
-#write.csv(silo3_9.annot, file = "no0-silo3_9-clus-annot.csv", row.names = FALSE)
+silo3_9.annot <- merge(silo3_9.edit, annotations, by.x = "ID", by.y = "Protein.ID")
+write.csv(silo3_9.annot, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/all-prot-anno.csv", row.names = FALSE)
 
 #Parse out unique proteins
 library(data.table)
@@ -170,18 +190,14 @@ unique.prot <- silo3_9.edit[!(duplicated(silo3_9.edit[c("ID", "Cluster")]) | dup
 anyDuplicated(silo3_9.edit[,c("ID","Cluster")]) #returns first duplicated rows
 anyDuplicated(unique.prot[,c("ID","Cluster")]) #returns 0 because there are no duplicates
 
-#Save datasheet with unique proteins and annotations
-#final.unique.prot <- merge(unique.prot, annotations, by.x = "ID", by.y = "Protein.ID")
+#datasheet with unique proteins and annotations
+final.unique.prot <- merge(unique.prot, annotations, by.x = "ID", by.y = "Protein.ID")
 
-#sum(final.unique.prot$Silo == "3")
-#sum(final.unique.prot$Silo == "9")
+#ensure protein numbers stayed equal between silos
+sum(final.unique.prot$Silo == "3")
+sum(final.unique.prot$Silo == "9")
 
-#write.csv(final.unique.prot, file = "no0-unique-clus-prot-silo3_9.csv", row.names = FALSE)
-
-write.csv(unique.prot, "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg-protid--uniqueproteins.csv")
-
-#Remove annotations
-#s39.unq.abudance <- final.unique.prot[,-c(12:64)]
+write.csv(final.unique.prot, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/unq-prot-anno.csv", row.names = FALSE)
 
 #Now I need to have only one column for each day rather than one column per silo per day
 #protein.names <-  data.frame(paste(s39.unq.abudance$Silo, "_", s39.unq.abudance$Protein, sep = ""))
@@ -189,14 +205,14 @@ write.csv(unique.prot, "Documents/robertslab/labnotebook/analysis/clustering/NSA
 #plot.unq.prot <-  silo3_9.all[which(silo3_9.all$Protein %in% protein.names$Protein),]
 
 #Plot abudances of unique proteins
-plot.unq <- unique.prot #5632 compared to 9180 = 3548 proteins eliminated
+plot.unq <- unique.prot
 plot.unq$S.ID <- paste(plot.unq$Silo, plot.unq$ID, sep="_")
 plot.unq <- plot.unq[,-c(2:3)]
 
 unq_melted_all_s3_9<-melt(plot.unq, id.vars=c('S.ID', 'Cluster'))
 silo <- substr(unq_melted_all_s3_9$S.ID, 0, 1)
 
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/NSAF-s3s9/travg250-unique-abundanceplots.jpeg", width = 1000, height = 1000)
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/lineplots-unq-prot.jpeg", width = 1000, height = 1000)
 
 ggplot(unq_melted_all_s3_9, aes(x=variable, y=value, group=S.ID, color = silo)) +geom_line(alpha=0.8) + theme_bw() +
   facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
@@ -205,6 +221,7 @@ dev.off()
 
 ###########################
 
+#if you want more annotations instead of just gene names
 annotations <- read.csv("Documents/robertslab/labnotebook/data/allsilos-tag_and_annot.csv")
 annotations <- annotations[,c(1,63)]
 annotations$Protein.ID <- sub("\\|", ".", annotations$Protein.ID)
