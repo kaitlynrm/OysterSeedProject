@@ -47,4 +47,6 @@ library(RColorBrewer)
 hmcol<-brewer.pal(11,"RdBu")
 
 library(heatmap3)
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/cluster-ASCA-prot-heatmap.jpeg", width = 1500, height = 1000)
 heatmap3(as.matrix(same.prot), method = "average", scale = "row", col=heat.colors(50), main="Proteins identified by ASCA and Clustering", Colv=NA)
+dev.off()
