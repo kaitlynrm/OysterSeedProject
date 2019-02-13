@@ -29,7 +29,15 @@ venn(list("23°C"=s3Names, "29°C"=s9Names))
 dev.off()
 
 library(VennDiagram)
-venn.plot <- venn.diagram(ven, fill=c("darkmagenta", "darkblue"), alpha=c(0.5,0.5), cex = 2, cat.fontface=4, category.names=c("23", "29"), main="23 vs 29 Proteins")
+venn <- data.frame(ven)
+write.csv(venn,"Documents/robertslab/labnotebook/analysis/venn-diagram/temp-prots.csv")
+
+class(venn)
+class(venn$Silo3)
+
+t23 <- list(venn$Silo3)
+t29 <- list(venn$Silo9)
+venn.plot <- draw.pairwise.venn(list("23°C"=t23, "29°C"=t29), fill=c("darkmagenta", "darkblue"), filename="Documents/robertslab/labnotebook/analysis/venn-diagram/venn-diagram.jpeg")
 
 
 
