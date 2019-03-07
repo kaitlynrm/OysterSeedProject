@@ -1,6 +1,26 @@
 #Heatmaps
 #https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf <- colorpalettes
 
+########################## ASCA ######################################
+#Reformatting ASCA proteins for cluster extraction from heatmap
+asca.prot <- read.csv("Downloads/ASCA_TempAffectedProteins.csv", stringsAsFactors = FALSE)
+rownames(asca.prot) <- asca.prot[,1]
+asca.prot <- asca.prot[,-c(1)]
+asca.prot <- t(asca.prot)
+asca.prot <- data.frame(asca.prot)
+
+names(asca.prot) <- gsub(x = colnames(asca.prot), pattern = "X", replacement = "D")
+names(asca.prot) <- gsub(x = colnames(asca.prot), pattern = "\\_", replacement = "T")
+
+#seperate silos
+silo3 <- unq.prot[,grepl("23", colnames(unq.prot))]
+silo9 <- unq.prot[,grepl("29", colnames(unq.prot))]
+s3s9 <- cbind(silo3, silo9)
+class(s3s9$D3T23) #columns are factor but should be numeric
+
+################################################################
+
+############################# HClust ###################################
 #organize data
 unq.prot <- read.csv("Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/techreps-avgs/silo3and9_nozerovals_AVGs/unq-prot-anno.csv")
 
@@ -17,8 +37,9 @@ silo9 <- silo9[,-c(1:4,11)]
 s3s9 <- cbind(silo3, silo9)
 
 colnames(s3s9) <- c("16D0", paste("23", colnames(s3s9[,c(2:7)]), sep=""),  paste("29", colnames(s3s9[,c(8:13)]), sep=""))
+################################################################
 
-########## Set gene names as row names
+###########################  Set gene names as row names  #####################################
 #load in and format original data
 NSAF.filtered <- read.csv("Documents/robertslab/labnotebook/data/NSAF/silo3and9_nozerovals_AVGs.csv")
 rownames(NSAF.filtered) <- paste(NSAF.filtered$day, NSAF.filtered$temp, sep="_")
