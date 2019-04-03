@@ -33,7 +33,7 @@ NSAF.trans <- data.frame(NSAF.avg)
 #Because the rest of the code was set for NSAF.trans not NSAF.avg
 #NSAF.trans <- data.frame(NSAF.fil)
 
-#####################################  For genes as names  ####################################################################
+#####################################  For genes as names  #############mn#######################################################
 
 #set gene names as row names
 #annotations <- read.csv("Documents/robertslab/labnotebook/data/allsilos-tag_and_annot.csv")
@@ -83,11 +83,10 @@ silo3.9 <- rbind(silo3,silo9)
 rownames(silo3.9) <- silo3.9$Names
 silo3.9 <- silo3.9[,-c(7)]
 
-#add in day 0 
-silo3.9$D0 <- NSAF.trans$D0T16
-
-library(dplyr)
-silo3.9 <- silo3.9 %>% select("D0", everything())
+#Optional: add in day 0 
+#silo3.9$D0 <- NSAF.trans$D0T16
+#library(dplyr)
+#silo3.9 <- silo3.9 %>% select("D0", everything())
 
 #biostats package
 source("Documents/robertslab/labnotebook/analysis/scripts/biostats.R")
@@ -105,7 +104,7 @@ library(cluster)
 clust.avg<-hclust(nsaf.euc, method='average')
 
 #agglomerate coefficent
-coef.hclust(clust.avg) #bray=0.9349286; euclidean=0.9969951
+coef.hclust(clust.avg) #bray=0.9349286; euclidean=0.9975303(w/out day 0)
 
 #cophenetic correlation (want at least 0.75)
 cor(nsaf.euc, cophenetic(clust.avg)) #bray=0.7690317; euclidean=0.9460521
@@ -119,29 +118,26 @@ dev.off()
 #But  it seems that this information cannot be pulled from the scree plot.
 
 #cut dendrogram at selected height
-plot(clust.avg, labels=FALSE)
-rect.hclust(clust.avg, h=300)
+plot(clust.avg, labels=FALSE,xlab = "Protein")
+rect.hclust(clust.avg, h=200)
 
 
 jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/eu-dendrogram.jpeg", width = 1000, height = 1000)
 plot(clust.avg, labels=FALSE)
-rect.hclust(clust.avg, h=300)
 rect.hclust(clust.avg, h=250)
+rect.hclust(clust.avg, h=200)
 rect.hclust(clust.avg, h=150)
 rect.hclust(clust.avg, h=100)
 dev.off()
 
 #this looks reasonable
-clust.class<-cutree(clust.avg, h=100)
+clust.class<-cutree(clust.avg, h=200)
 max(clust.class) 
-#0.7bc=9; 0.65=17; 0.6bc=23; 0.5bc=54
-#300=25; 250eu=35; 150eu=79 ; 100eu= 119
-
 
 #Cluster Freq table
 silo3_9.freq <- data.frame(table(clust.class))
 
-write.csv(silo3_9.freq, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/100freq.csv", row.names = FALSE)
+write.csv(silo3_9.freq, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/200freq.csv", row.names = FALSE)
 
 #Make df
 silo3_9.clus <- data.frame(clust.class)
@@ -162,12 +158,18 @@ library(ggplot2)
 
 melted_all_s3_9<-melt(silo3_9.all, id.vars=c('ID', 'Cluster'))
 
-silo <- substr(melted_all_s3_9$ID, 0, 1)
+Temperature <- paste(sep="", 2,(substr(melted_all_s3_9$ID, 0, 1)))
 
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/100faceted-abund.jpeg", width = 1000, height = 1000)
+melted_all_s3_9$variable <- gsub("D","", melted_all_s3_9$variable)
+melted_all_s3_9$variable <- as.factor(melted_all_s3_9$variable) 
+class(melted_all_s3_9$variable)
 
-ggplot(melted_all_s3_9, aes(x=variable, y=value, group=ID, color=silo)) +geom_line(alpha=0.8) + theme_bw() +
-  facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/250faceted-abund.jpeg", width = 1000, height = 1000)
+
+ggplot(melted_all_s3_9, aes(x=variable, y=value, group=ID, color=Temperature)) +
+  geom_line(alpha=0.8) + theme_bw() +
+  facet_wrap(~Cluster, scales='free_y') + 
+  labs(x='Day', y='Normalized Spectral Abundance Factor')
 
 dev.off()
 
@@ -203,7 +205,7 @@ anyDuplicated(unique.prot[,c("ID","Cluster")]) #returns 0 because there are no d
 sum(unique.prot$Silo == "3")
 sum(unique.prot$Silo == "9")
 
-write.csv(unique.prot, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/100unique-prot.csv", row.names = FALSE)
+write.csv(unique.prot, file = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/250unique-prot.csv", row.names = FALSE)
 
 #Now I need to have only one column for each day rather than one column per silo per day
 #protein.names <-  data.frame(paste(s39.unq.abudance$Silo, "_", s39.unq.abudance$Protein, sep = ""))
@@ -216,15 +218,23 @@ plot.unq$S.ID <- paste(plot.unq$Silo, plot.unq$ID, sep="_")
 plot.unq <- plot.unq[,-c(2:3)]
 
 unq_melted_all_s3_9<-melt(plot.unq, id.vars=c('S.ID', 'Cluster'))
-silo <- substr(unq_melted_all_s3_9$S.ID, 0, 1)
+Temperature <- paste(sep="", 2,(substr(unq_melted_all_s3_9$S.ID, 0, 1)))
 
-jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/100faceted-unq.jpeg", width = 1000, height = 1000)
+unq_melted_all_s3_9$variable <- gsub("D","", unq_melted_all_s3_9$variable)
+unq_melted_all_s3_9$variable <- as.factor(as.numeric(unq_melted_all_s3_9$variable))
+class(unq_melted_all_s3_9$variable)
 
-ggplot(unq_melted_all_s3_9, aes(x=variable, y=value, group=S.ID, color = silo)) +geom_line(alpha=0.8) + theme_bw() +
-  facet_wrap(~Cluster, scales='free_y') + labs(x='Time Point', y='Normalized Spectral Abundance Factor')
+jpeg(filename = "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/250faceted-unq.jpeg", width = 1000, height = 1000)
+
+ggplot(unq_melted_all_s3_9, aes(x=variable, y=value, group=S.ID, color = Temperature)) +
+  geom_line(alpha=0.8) + theme_bw() +
+  facet_wrap(~Cluster, scales='free_y') + 
+  labs(x='Day', y='Normalized Spectral Abundance Factor')
 
 dev.off()
 
+
+write.csv(silo3_9.all, "Documents/robertslab/labnotebook/analysis/clustering/silo3_9-NSAF/euclidean/250-clust-protein.csv")
 ###########################
 
 #if you want more annotations instead of just gene names
