@@ -1,0 +1,11 @@
+Run ID,Assay Name,Test Name,Test Date,Qubit® tube conc.,Units,Original sample conc.,Units,Sample Volume (µL),Dilution Factor,Std 1 RFU,Std 2 RFU,Std 3 RFU,Excitation,Emission,Green RFU,Far Red RFU
+2020-02-04_130500,RNA High sensitivity,55(2),2/4/2020 13:07,570,ng/mL,57,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,2072.28
+2020-02-04_130500,RNA High sensitivity,55F,2/4/2020 13:07,Out of range,ng/mL,Out of range,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,3544.7
+2020-02-04_130500,RNA High sensitivity,54,2/4/2020 13:07,Out of range,ng/mL,Out of range,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,3152.78
+2020-02-04_130500,RNA High sensitivity,43B,2/4/2020 13:07,36.2,ng/mL,3.62,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,228.71
+2020-02-04_130500,RNA High sensitivity,43A,2/4/2020 13:06,Out of range,ng/mL,Out of range,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,3520.34
+2020-02-04_130500,RNA High sensitivity,37,2/4/2020 13:06,Out of range,ng/mL,Out of range,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,4893.75
+2020-02-04_130500,RNA High sensitivity,28,2/4/2020 13:06,187,ng/mL,18.7,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,837.09
+2020-02-04_130500,RNA High sensitivity,23,2/4/2020 13:06,Out of range,ng/mL,Out of range,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,151.89
+2020-02-04_130500,RNA High sensitivity,21,2/4/2020 13:05,180,ng/mL,18,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,812.06
+2020-02-04_130500,RNA High sensitivity,19,2/4/2020 13:05,358,ng/mL,35.8,ng/µL,2,100,92.49,1881.11,,Red,Far Red,,1448.3

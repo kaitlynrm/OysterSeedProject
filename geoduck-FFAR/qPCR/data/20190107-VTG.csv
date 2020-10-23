@@ -1,0 +1,52 @@
+File Name,admin_2020-01-07 15-09-31_BR006896.pcrd,,,,,,,,,
+Created By User,admin,,,,,,,,,
+Notes,,,,,,,,,,
+ID,,,,,,,,,,
+Run Started,01/07/2020 23:09:44 UTC,,,,,,,,,
+Run Ended,01/08/2020 00:20:12 UTC,,,,,,,,,
+Sample Vol,20,,,,,,,,,
+Lid Temp,105,,,,,,,,,
+Protocol File Name,CFX_2StepAmp60_EVAGreen+Melt.prcl,,,,,,,,,
+Plate Setup File Name,QuickPlate_96 wells_sybr_white.pltd,,,,,,,,,
+Base Serial Number,BR006896,,,,,,,,,
+Optical Head Serial Number,788BR07000,,,,,,,,,
+CFX Maestro Version,4.1.2433.1219. ,,,,,,,,,
+,,,,,,,,,,
+Well group,All Wells,,,,,,,,,
+Amplification step,3,,,,,,,,,
+Melt step,5,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Well,Target,Content,Sample,Stage,Sex,Cq,Cq Mean,Cq Std. Dev,Melt Temperature,Peak Height
+A01,VTG,Unkn-01,1,Unk,Unk,NaN,0,0,None,None
+A02,VTG,Unkn-01,1,Unk,Unk,NaN,0,0,None,None
+A03,VTG,Unkn-02,2,Unk,Unk,NaN,0,0,None,None
+A04,VTG,Unkn-02,2,Unk,Unk,NaN,0,0,None,None
+A05,VTG,Unkn-03,19,2,F,NaN,0,0,None,None
+A06,VTG,Unkn-03,19,2,F,NaN,0,0,None,None
+A07,VTG,Unkn-04,27,1,M,39.04296816,39.07136539,0.040159742,None,None
+A08,VTG,Unkn-04,27,1,M,39.09976261,39.07136539,0.040159742,None,None
+B01,VTG,Unkn-05,31,4,F,33.52583815,33.62236026,0.136502874,83,2475.506292
+B02,VTG,Unkn-05,31,4,F,33.71888236,33.62236026,0.136502874,83,2532.359163
+B03,VTG,Unkn-06,39,5,F,NaN,0,0,None,None
+B04,VTG,Unkn-06,39,5,F,NaN,0,0,None,None
+B05,VTG,Unkn-07,57,7,F,NaN,0,0,None,None
+B06,VTG,Unkn-07,57,7,F,NaN,0,0,None,None
+B07,VTG,Unkn-08,59,4,M,38.98930584,39.09460609,0.14891704,None,None
+B08,VTG,Unkn-08,59,4,M,39.19990634,39.09460609,0.14891704,None,None
+C01,VTG,Unkn-09,61,7,F,31.6888205,31.50163572,0.264719251,83,2676.521569
+C02,VTG,Unkn-09,61,7,F,31.31445094,31.50163572,0.264719251,83,3379.589595
+C03,VTG,Unkn-10,62,5,M,NaN,0,0,None,None
+C04,VTG,Unkn-10,62,5,M,NaN,0,0,None,None
+C05,VTG,Unkn-11,66,3,F,NaN,0,0,None,None
+C06,VTG,Unkn-11,66,3,F,NaN,0,0,None,None
+C07,VTG,Unkn-12,1115_Chewy,Unk,Unk,NaN,0,0,None,None
+C08,VTG,Unkn-12,1115_Chewy,Unk,Unk,NaN,0,0,None,None
+D01,VTG,Unkn-13,1115_Star,Unk,Unk,NaN,0,0,None,None
+D02,VTG,Unkn-13,1115_Star,Unk,Unk,NaN,0,0,None,None
+D03,VTG,Unkn-14,1121_Chewy,Unk,Unk,38.7864629,38.7864629,0,82.8,795.7033315
+D04,VTG,Unkn-14,1121_Chewy,Unk,Unk,NaN,0,0,None,None
+D05,VTG,Unkn-15,1121_Star,Unk,Unk,NaN,0,0,None,None
+D06,VTG,Unkn-15,1121_Star,Unk,Unk,NaN,0,0,None,None
+D07,VTG,NTC-01,H2O,NA,NA,NaN,0,0,None,None
+D08,VTG,NTC-01,H2O,,,NaN,0,0,None,None

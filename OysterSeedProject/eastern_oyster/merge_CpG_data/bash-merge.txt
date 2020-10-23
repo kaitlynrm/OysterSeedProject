@@ -1,0 +1,68 @@
+
+#Download files from gannet
+wget --no-parent -r http://gannet.fish.washington.edu/Atumefaciens/20190225_cpg_oe/
+
+#Remove larger files
+for d in ./*/; do cd "$d"; rm comb; rm Combined.*; ls; cd ../; done
+
+##### PROBLEM #####
+
+#Add names: filename as $2 and rows as $1
+for d in ./*/; do cd "$d"; sed "1irows\t${d}" ID_CpG > colnames; head colnames; cd ../; done
+
+#Files already sorted and in same order!
+#Paste second column of all files into master sheet containing column 1
+
+awk '{print$1}' Combined.SNP.TRSdp5g95FnDNAmaf05.sorted.ANACfill.CLP_1_GENE_analysis/colnames > master
+
+for d in ./*/; do cd "$d"; awk '{print$2}' colnames > coltwo; paste ../master coltwo > ${tmp} && mv ${tmp} ../master; cd ../; done
+
+head -n 1 master
+
+####### SOLUTION #######
+
+#!/bin/bash
+
+## Script to append sample-specific headers to each ID_CpG
+
+## file and join all ID_CpG files.
+
+
+## Run file from within this directory.
+
+
+# Temp file placeholder
+tmp=$(mktemp)
+
+
+# Create array of subdirectories.
+array=(*/)
+
+
+# Create column headers for ID_CpG files using sample name from directory name.
+
+
+for file in ${array[@]}
+do
+  gene=$(echo ${file} | awk -F\[._] '{print $6"_"$7}')
+  sed "1iID\t${gene}" ${file}ID_CpG > ${file}ID_CpG_labelled; 
+done
+
+
+
+# Create initial file for joining
+cp ${array[0]}ID_CpG_labelled ID_CpG_labelled_all
+
+
+# Loop through array and performs joins.
+
+
+for file in ${array[@]:1}
+do
+  join \
+  --nocheck-order \
+  ID_CpG_labelled_all ${file}ID_CpG_labelled \
+  | column -t \
+  > ${tmp} \
+  && mv ${tmp} ID_CpG_labelled_all
+; done
